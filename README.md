@@ -1,7 +1,7 @@
 # Medieval Charters Knowledge Graph (MCKG)
 
 [![Version Status](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/ExarcaFidalgo/MCKG-A-Community-Driven-Knowledge-Graph-on-Medieval-Charters)
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 This repository contains all supplemental materials -including the datasets, code, and validation artefacts- supporting the paper:
 
@@ -52,7 +52,7 @@ The data model combines the event-centric semantics of [CIDOC-CRM](https://cidoc
 * **Last update**: 2025-05-13
 
 ### Licenses
-* **Dataset License**. The RDF datasets are released under _Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)_
+* **Dataset License**. The RDF datasets are released under _Creative Commons Attribution 4.0 International (CC BY 4.0)_
 * **Code License**. The code in this repository is released under _MIT License_.
 
 Users must comply with the respective license terms when reusing data or code.
