@@ -42,7 +42,7 @@ The MCKG provides a structured semantic representation of documentary informatio
 * Properties involved in legal transactions and ownership transitions.
 * Provenance distinguishing domain expert annotations from community-supported contributions.
 
-The data model combines the event-centric semantics of CIDOC-CRM with selected properties aligned to Wikidata, implemented within a Wikibase environment and validated through Shape Expressions (ShEx).
+The data model combines the event-centric semantics of [CIDOC-CRM](https://cidoc-crm.org/sites/default/files/Documents/cidoc_crm_version_7.1.3.html) with selected properties aligned to [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page), implemented within a Wikibase environment and validated through Shape Expressions (ShEx).
 
 ## Dataset Versioning, Licenses and Statistics
 
