@@ -36,7 +36,7 @@ The corpus contains documentary records describing legal, economic, and social r
 ## Knowledge Graph Scope
 
 The MCKG provides a structured semantic representation of documentary information extracted from medieval Spanish charters (AMSPO corpus). It models:
-* Legal and socio-economic acts recorded in charters (e.g., donations, property transfers), including their temporal context and participating agents.
+* Legal and socio-economic acts recorded in charters (e.g., donations, property transfers), including their temporal context and role-based participation of agents.
 * Natural persons and institutions appearing in the documents.
 * Explicit kinship and institutional affiliations asserted in the text.
 * Properties involved in legal transactions and ownership transitions.
@@ -48,8 +48,8 @@ The data model combines the event-centric semantics of CIDOC-CRM with selected p
 
 ### Version
 * **Current version**: v1.0.0
-* **Release date**: 13/05/2025
-* **Last update**: 13/05/2025
+* **Release date**: 2025-05-13
+* **Last update**: 2025-05-13
 
 ### Licenses
 * **Dataset License**. The RDF datasets are released under _Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)_
@@ -68,12 +68,12 @@ Users must comply with the respective license terms when reusing data or code.
 ## Reproducibility
 
 This repository provides all artefacts required to:
-* Inspect the RDF datasets derived from the AMSPO corpus
-* Reproduce the RDF-to-Wikibase ingestion workflow
-* Examine validation constraints (ShEx / EntitySchemas)
-* Re-run SPARQL-based statistical analyses
+* Inspect the RDF datasets derived from the AMSPO corpus.
+* Reproduce the RDF-to-Wikibase ingestion workflow.
+* Examine validation constraints (ShEx / EntitySchemas).
+* Re-run SPARQL-based statistical analyses.
 
-The live MCKG instance and the repository together ensure reproducibility of the population pipeline described in the paper.
+The RDF datasets provided here correspond to the data ingested into the public Wikibase instance (version v1.0.0). The live MCKG instance and the repository together ensure reproducibility of the population pipeline described in the paper. 
 
 ## Repository Structure
 All resources are bundled in _mckg.zip_ and organized as follows:
@@ -86,7 +86,7 @@ All resources are bundled in _mckg.zip_ and organized as follows:
   * _Shexer_ extracts Shape Expressions from the RDF datasets for validation and EntitySchema construction.
   * _WikibaseIntegration_ loads into the MCKG core entities and properties of the data model, as well as the processed datasets in CSV format.
 * _csv_ contains the csv files used in _WikibaseIntegration_. Those with the prefix _wikibase_import_dataset_ are an output of CSVGenerator.
-* _shapes_ stores both Shape Expressions extracted by _sheXer_ and the resulting EntitySchemas, available as well in the MKCG for validation.
+* _shapes_ stores both Shape Expressions extracted by _sheXer_ and the resulting EntitySchemas, available as well in the MCKG for validation.
 * _sparql_ includes all SPARQL queries used for generating statistics as well as the queries corresponding to the application examples. Those are also available as examples in the MCKG Query Service.
 * _NER_ contains RoBERTa NER outputs, used as support for community contributions.
 
