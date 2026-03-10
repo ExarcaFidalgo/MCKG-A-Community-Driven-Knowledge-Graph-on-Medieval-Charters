@@ -1,0 +1,50 @@
+PREFIX wd: <https://medievalcharterskg.wikibase.cloud/entity/>
+PREFIX wdt: <https://medievalcharterskg.wikibase.cloud/prop/direct/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+SELECT
+  ?entities
+  ?statements
+  ?qualifyingStatements
+  ?referenceStatements
+  ?documentsProcessed
+WHERE {
+  {
+    SELECT (COUNT(?item) AS ?entities)
+    WHERE {
+      ?item wdt:P3 ?class .
+    }
+  }
+  {
+    SELECT (COUNT(*) AS ?statements)
+    WHERE {
+      ?item ?prop ?value .
+      FILTER(STRSTARTS(STR(?item), "https://medievalcharterskg.wikibase.cloud/entity/Q"))
+      FILTER(STRSTARTS(STR(?prop), "https://medievalcharterskg.wikibase.cloud/prop/direct/"))
+    }
+  }
+  {
+    SELECT (COUNT(*) AS ?qualifyingStatements)
+    WHERE {
+      ?item ?p ?statement .
+      FILTER(STRSTARTS(STR(?item), "https://medievalcharterskg.wikibase.cloud/entity/Q"))
+      FILTER(STRSTARTS(STR(?p), "https://medievalcharterskg.wikibase.cloud/prop/P"))
+      ?statement ?qp ?qvalue .
+      FILTER(STRSTARTS(STR(?qp), "https://medievalcharterskg.wikibase.cloud/prop/qualifier/"))
+    }
+  }
+  {
+    SELECT (COUNT(*) AS ?referenceStatements)
+    WHERE {
+      ?statement prov:wasDerivedFrom ?ref .
+      ?ref ?rp ?value .
+      FILTER(STRSTARTS(STR(?rp), "https://medievalcharterskg.wikibase.cloud/prop/reference/"))
+    }
+  }
+  {
+    SELECT (COUNT(?doc) AS ?documentsProcessed)
+    WHERE {
+      ?doc wdt:P3 wd:Q30 .
+    }
+  }
+}
