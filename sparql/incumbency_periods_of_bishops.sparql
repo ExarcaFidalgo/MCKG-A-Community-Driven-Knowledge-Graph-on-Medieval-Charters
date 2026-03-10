@@ -1,4 +1,4 @@
-#Gets the start and end times of the incumbency of our bishops of Oviedo by federated query to wikidata
+# Incumbency Periods of Bishops of Oviedo (Federated Query to Wikidata)
 PREFIX wb: <https://medievalcharterskg.wikibase.cloud/entity/>
 PREFIX wbt: <https://medievalcharterskg.wikibase.cloud/prop/direct/>
 PREFIX wd: <http://www.wikidata.org/entity/>
