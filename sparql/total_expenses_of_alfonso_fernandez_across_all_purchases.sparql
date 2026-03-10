@@ -1,4 +1,4 @@
-#Gets the total expenses of Alfonso Fernández (P154) in all the purchases he was a buyer.
+# Total Expenses of Alfonso Fernández Across All Purchases
 PREFIX wd: <https://medievalcharterskg.wikibase.cloud/entity/>
 PREFIX wdt: <https://medievalcharterskg.wikibase.cloud/prop/direct/>
 
