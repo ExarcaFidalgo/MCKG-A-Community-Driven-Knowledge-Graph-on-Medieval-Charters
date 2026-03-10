@@ -6,4 +6,5 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 {
    wdt:P3  [wd:Q17]  ;
    wdt:P1  xsd:string ; # ID
+   wdt:P28 @<Document> +;  # Is documented in
 }
