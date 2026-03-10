@@ -1,0 +1,15 @@
+#Parents with the Highest Number of Documented Children
+PREFIX wd: <https://medievalcharterskg.wikibase.cloud/entity/>
+PREFIX wdt: <https://medievalcharterskg.wikibase.cloud/prop/direct/>
+
+SELECT ?parent ?parentLabel (COUNT(?child) AS ?children)
+WHERE {
+  ?parent wdt:P3 wd:Q16 .
+  ?parent wdt:P59 ?child .
+  
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" .
+  }
+}
+GROUP BY ?parent ?parentLabel
+ORDER BY DESC(?children)
