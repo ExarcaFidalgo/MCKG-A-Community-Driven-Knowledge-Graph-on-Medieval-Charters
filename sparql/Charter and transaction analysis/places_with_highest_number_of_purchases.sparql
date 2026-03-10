@@ -1,0 +1,15 @@
+# Places with the Highest Number of Purchase Transactions
+PREFIX wd: <https://medievalcharterskg.wikibase.cloud/entity/>
+PREFIX wdt: <https://medievalcharterskg.wikibase.cloud/prop/direct/>
+
+SELECT ?placeLabel (COUNT(?activity) AS ?purchases)
+WHERE {
+  ?activity wdt:P3 wd:Q14 .
+  ?activity wdt:P19 ?site .
+  ?site wdt:P27 ?place .
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" .
+  }
+}
+GROUP BY ?placeLabel
+ORDER BY DESC(?purchases)
