@@ -102,7 +102,16 @@ All resources are bundled in _mckg.zip_ and organized as follows:
   * _WikibaseIntegration_ loads into the MCKG core entities and properties of the data model, as well as the processed datasets in CSV format.
 * _csv_ contains the csv files used in _WikibaseIntegration_. Those with the prefix _wikibase_import_dataset_ are an output of CSVGenerator.
 * _shapes_ stores both Shape Expressions extracted by _sheXer_ and the resulting EntitySchemas, available as well in the MCKG for validation.
-* _sparql_ includes all SPARQL queries used for generating statistics as well as the queries corresponding to the application examples. Those are also available as examples in the MCKG Query Service.
+* _sparql_ contains the SPARQL queries used for generating dataset statistics and for the analytical examples discussed in the paper. These queries are also available as executable examples in the MCKG Query Service.
+  The queries are organized by research theme, including:
+  * _Charter and transaction analysis_.
+  * _External knowledge integration_.
+  * _Genealogical reconstruction_.
+  * _Linguistic and onomastic analysis_.
+  * _Prosopographic and sociographic analysis_.
+  * _Provenance-aware queries_.
+  * _Spatial analysis_.
+  * _Statistics_.
 * _NER_ contains RoBERTa NER outputs, used as support for community contributions.
 
 This README is included in both the ZIP file and repository root for clarity.
