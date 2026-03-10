@@ -1,4 +1,4 @@
-#Gets all ortographical variations of a given name (Rodrigo), ordered by frequency.
+#Gets all ortographic variants of a given name (Rodrigo), ordered by frequency.
 PREFIX wd: <https://medievalcharterskg.wikibase.cloud/entity/>
 PREFIX wdt: <https://medievalcharterskg.wikibase.cloud/prop/direct/>
 PREFIX p: <https://medievalcharterskg.wikibase.cloud/prop/> # Namespace for statements
