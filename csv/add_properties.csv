@@ -1,70 +1,73 @@
-Property Label EN;Datatype;Property Description;;Property Label ES
-ID;string;Item unique identifier;;ID
-Wikidata ID;external-id;Wikidata ID of the item;;ID Wikidata
-Instance of;wikibase-item;;;Instancia de
-Subclass of;wikibase-item;;;Subclase de
-Has type;wikibase-item;crm:P2_has_type;;Tiene tipo
-Has time span;wikibase-item;crm:P4_has_time-span;;Tiene período de tiempo
-Took place at;wikibase-item;crm:P7_took_place_at;;Tuvo lugar en
-Took place on or within;wikibase-item;crm:P8;;Tuvo lugar el
-Consists of;wikibase-item;crm:P9_consists_of;;Consiste en
-Had participant;wikibase-item;crm:P11_had_participant;;Tuvo participante
-Was present at;wikibase-item;crm:P12i_was_present_at;;Estuvo presente en
-Carried out by;wikibase-item;crm:P14_carried_out_by;;Llevado a cabo por
-In the role of;wikibase-item;crm:P14.1_in_the_role_of;;En el rol de
-Was influenced by;wikibase-item;crm:P15_was_influenced_by;;Influenciado por
-Was motivated by;wikibase-item;crm:P17_was_motivated_by;;Motivado por
-Had general purpose;wikibase-item;crm:P21_had_general_purpose;;Tuvo propósito general
-Transferred title to;wikibase-item;crm:P22_transferred_title_to;;Título transferido a
-Transferred title from;wikibase-item;crm:P23_transferred_title_from;;Título transferido por
-Transferred title of;wikibase-item;crm:P24_transferred_title_of;;Título transferido de
-Moved;wikibase-item;crm:P25_moved;;Movió
-Moved to;wikibase-item;crm:P26_moved;;Movió de
-Moved from;wikibase-item;crm:P27_moved;;Movió a
-Custody surrendered by;wikibase-item;crm:P28_custody_surrendered_by;;Custodia entregada por
-Custody received by;wikibase-item;crm:P29_custody_received_by;;Custodia recibida por
-Transferred custody of;wikibase-item;crm:P30_transferred_custody_of;;Custodia transferida de
-Has modified;wikibase-item;crm:P31_has_modified;;Ha modificado
-Has former or current location;wikibase-item;crm:P53_has_former_or_current_location;;Tiene ubicación pasada o actual
-Is documented in;wikibase-item;crm:P70i_is_documented_in;;Está documentado en
-Beginning is qualified by;string;crm:P79_beginning_is_qualified_by;;Comienzo cualificado por
-End is qualified by;string;crm:P80_end_is_qualified_by;;Final cualificado por
-Ongoing throughout;time;crm:P81_ongoing_throughout;;En curso durante
-At some time within;time;crm:P82_at_some_time_within;;En algún momento en
-Has value;quantity;crm:P90_has_value;;Tiene valor
-Was born;wikibase-item;crm:P98i_was_born;;Nació en
-Died in;wikibase-item;crm:P100i_died_in;;Murió en
-Has current or former member;wikibase-item;crm:P107_has_current_or_former_member;;Tiene miembro actual o pasado
-Has produced;wikibase-item;crm:P108_has_produced;;Ha producido
-Continued;wikibase-item;crm:P134_continued;;Continúa
-Starts before or with the end of;wikibase-item;crm:P173_starts_before_or_with_the_end_of;;Empieza antes o con el fin de
-Starts before the end of;wikibase-item;crm:P174_starts_before_the_end_of;;Empieza antes del fin de
-Starts before or with the start of;wikibase-item;crm:P175;;Empieza antes o con el comienzo de
-Starts before the start of;wikibase-item;crm:P176;;Empieza antes del comienzo de
-Had sales price;wikibase-item;crm:P179_had_sales_price;;Tiene precio de venta
-Has currency;wikibase-item;crm:P180_has_currency;;Tiene divisa
-Ends before or with the start of;wikibase-item;crm:P182;;Finaliza antes o con el fin de
-Ends before the start of ;wikibase-item;crm:P183;;Finaliza antes del comienzo de
-Ends before or with the end of ;wikibase-item;crm:P184;;Finaliza antes o con el comienzo de
-Ends before the end of;wikibase-item;crm:P185;;Finaliza antes del fin de
-Given name;wikibase-item;;;Nombre
-Family name;wikibase-item;;;Apellido
-Nickname;string;;;Alias
-Occupation;wikibase-item;;;Oficio
-Work location;wikibase-item;;;Lugar de trabajo
-Employer;wikibase-item;;;Empleador
-Residence;wikibase-item;;;Residencia
-Spouse;wikibase-item;;;Cónyuge
-Father;wikibase-item;;;Padre
-Mother;wikibase-item;;;Madre
-Child;wikibase-item;;;Hijo/a
-Sibling;wikibase-item;;;Hermano
-Relative;wikibase-item;;;Pariente
-Kinship to subject;wikibase-item;;;Parentesco con el sujeto
-Stated in authoritative source;wikibase-item;;;Declarado en fuente fidedigna
-Applies to jurisdiction;wikibase-item;;;Aplica a la jurisdicción
-Position held;wikibase-item;;;Puesto ocupado
-Regnal ordinal;string;;;Ordinal regio
-Title;string;;;Título
-Inferred from;wikibase-item;;;Deducido de
-Native label;string;;;Nombre en la lengua nativa
+Property Label EN,Datatype,Property Description,,Property Label ES
+ID,string,Item unique identifier,,ID
+Wikidata ID,external-id,Wikidata ID of the item,,ID Wikidata
+Instance of,wikibase-item,,,Instancia de
+Subclass of,wikibase-item,,,Subclase de
+Has type,wikibase-item,crm:P2_has_type,,Tiene tipo
+Has time span,wikibase-item,crm:P4_has_time-span,,Tiene período de tiempo
+Took place at,wikibase-item,crm:P7_took_place_at,,Tuvo lugar en
+Took place on or within,wikibase-item,crm:P8,,Tuvo lugar el
+Consists of,wikibase-item,crm:P9_consists_of,,Consiste en
+Had participant,wikibase-item,crm:P11_had_participant,,Tuvo participante
+Was present at,wikibase-item,crm:P12i_was_present_at,,Estuvo presente en
+Carried out by,wikibase-item,crm:P14_carried_out_by,,Llevado a cabo por
+In the role of,wikibase-item,crm:P14.1_in_the_role_of,,En el rol de
+Was influenced by,wikibase-item,crm:P15_was_influenced_by,,Influenciado por
+Was motivated by,wikibase-item,crm:P17_was_motivated_by,,Motivado por
+Had general purpose,wikibase-item,crm:P21_had_general_purpose,,Tuvo propósito general
+Transferred title to,wikibase-item,crm:P22_transferred_title_to,,Título transferido a
+Transferred title from,wikibase-item,crm:P23_transferred_title_from,,Título transferido por
+Transferred title of,wikibase-item,crm:P24_transferred_title_of,,Título transferido de
+Moved,wikibase-item,crm:P25_moved,,Movió
+Moved to,wikibase-item,crm:P26_moved,,Movió de
+Moved from,wikibase-item,crm:P27_moved,,Movió a
+Custody surrendered by,wikibase-item,crm:P28_custody_surrendered_by,,Custodia entregada por
+Custody received by,wikibase-item,crm:P29_custody_received_by,,Custodia recibida por
+Transferred custody of,wikibase-item,crm:P30_transferred_custody_of,,Custodia transferida de
+Has modified,wikibase-item,crm:P31_has_modified,,Ha modificado
+Has former or current location,wikibase-item,crm:P53_has_former_or_current_location,,Tiene ubicación pasada o actual
+Is documented in,wikibase-item,crm:P70i_is_documented_in,,Está documentado en
+Beginning is qualified by,string,crm:P79_beginning_is_qualified_by,,Comienzo cualificado por
+End is qualified by,string,crm:P80_end_is_qualified_by,,Final cualificado por
+Ongoing throughout,time,crm:P81_ongoing_throughout,,En curso durante
+At some time within,time,crm:P82_at_some_time_within,,En algún momento en
+Has value,quantity,crm:P90_has_value,,Tiene valor
+Was born,wikibase-item,crm:P98i_was_born,,Nació en
+Died in,wikibase-item,crm:P100i_died_in,,Murió en
+Has current or former member,wikibase-item,crm:P107_has_current_or_former_member,,Tiene miembro actual o pasado
+Has produced,wikibase-item,crm:P108_has_produced,,Ha producido
+Continued,wikibase-item,crm:P134_continued,,Continúa
+Starts before or with the end of,wikibase-item,crm:P173_starts_before_or_with_the_end_of,,Empieza antes o con el fin de
+Starts before the end of,wikibase-item,crm:P174_starts_before_the_end_of,,Empieza antes del fin de
+Starts before or with the start of,wikibase-item,crm:P175,,Empieza antes o con el comienzo de
+Starts before the start of,wikibase-item,crm:P176,,Empieza antes del comienzo de
+Had sales price,wikibase-item,crm:P179_had_sales_price,,Tiene precio de venta
+Has currency,wikibase-item,crm:P180_has_currency,,Tiene divisa
+Ends before or with the start of,wikibase-item,crm:P182,,Finaliza antes o con el fin de
+Ends before the start of ,wikibase-item,crm:P183,,Finaliza antes del comienzo de
+Ends before or with the end of ,wikibase-item,crm:P184,,Finaliza antes o con el comienzo de
+Ends before the end of,wikibase-item,crm:P185,,Finaliza antes del fin de
+Given name,wikibase-item,,,Nombre
+Family name,wikibase-item,,,Apellido
+Nickname,string,,,Alias
+Occupation,wikibase-item,,,Oficio
+Work location,wikibase-item,,,Lugar de trabajo
+Employer,wikibase-item,,,Empleador
+Residence,wikibase-item,,,Residencia
+Spouse,wikibase-item,,,Cónyuge
+Father,wikibase-item,,,Padre
+Mother,wikibase-item,,,Madre
+Child,wikibase-item,,,Hijo/a
+Sibling,wikibase-item,,,Hermano
+Relative,wikibase-item,,,Pariente
+Kinship to subject,wikibase-item,,,Parentesco con el sujeto
+Stated in authoritative source,wikibase-item,,,Declarado en fuente fidedigna
+Applies to jurisdiction,wikibase-item,,,Aplica a la jurisdicción
+Position held,wikibase-item,,,Puesto ocupado
+Regnal ordinal,string,,,Ordinal regio
+Title,string,,,Título
+Inferred from,wikibase-item,,,Deducido de
+Native label,string,,,Nombre en la lengua nativa
+CIDOC-CRM ID,external-id,,,ID en CIDOC-CRM
+Mentions entity,wikibase-item,,,Menciona a entidad
+URI,url,,,URI
