@@ -1,4 +1,4 @@
-#Gets all witnesses that carried out one purchase, but only those that have been explicitly stated by the domain expert.
+# Witnesses in Purchase AMSPO-D120 According to Domain Expert Assertions
 PREFIX wd: <https://medievalcharterskg.wikibase.cloud/entity/>
 PREFIX wdt: <https://medievalcharterskg.wikibase.cloud/prop/direct/> 
 PREFIX P: <https://medievalcharterskg.wikibase.cloud/prop/>          
