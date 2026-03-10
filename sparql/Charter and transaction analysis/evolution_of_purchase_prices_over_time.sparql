@@ -1,0 +1,19 @@
+# Evolution of Purchase Prices Over Time
+PREFIX wd: <https://medievalcharterskg.wikibase.cloud/entity/>
+PREFIX wdt: <https://medievalcharterskg.wikibase.cloud/prop/direct/>
+#defaultView:BarChart
+SELECT ?date ?value ?currencyLabel
+WHERE {
+  ?purchase wdt:P3 wd:Q14 .
+  ?purchase wdt:P6 ?ts .
+  ?ts wdt:P32 ?date .
+
+  ?purchase wdt:P43 ?amount .
+  ?amount wdt:P33 ?value .
+  ?amount wdt:P44 ?currency .
+  
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" .
+  }
+}
+ORDER BY ?date
