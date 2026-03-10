@@ -1,7 +1,7 @@
 # Medieval Charters Knowledge Graph (MCKG)
 
-[![Version Status](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/ExarcaFidalgo/MCKG-A-Community-Driven-Knowledge-Graph-on-Medieval-Charters)
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![Version Status](https://img.shields.io/badge/version-1.1.0-green.svg)](https://github.com/ExarcaFidalgo/MCKG-A-Community-Driven-Knowledge-Graph-on-Medieval-Charters)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 This repository contains all supplemental materials -including the datasets, code, and validation artefacts- supporting the paper:
 
@@ -12,6 +12,10 @@ Submitted to the Semantic Web Journal.
 The **Medieval Charters Knowledge Graph (MCKG)** is a provenance-aware knowledge graph constructed from the **AMSPO medieval charter corpus**, modeling persons, institutions, events, properties, and genealogical relations described in medieval Spanish charters.
 
 The live Wikibase instance is publicly available at [Wikibase cloud](https://medievalcharterskg.wikibase.cloud/wiki/Main_Page).
+RDF datasets (Turtle format) used to populate the MCKG are available in the `datasets/` directory and can be downloaded directly for reuse in external applications:
+
+- [Community annotations dataset](datasets/community_dataset.ttl)  
+- [Domain expert annotations dataset](datasets/domain_expert_dataset.ttl)
 
 
 ## Table of Contents
@@ -48,9 +52,9 @@ The data model combines the event-centric semantics of [CIDOC-CRM](https://cidoc
 ## Dataset Versioning, Licenses and Statistics
 
 ### Version
-* **Current version**: v1.0.0
+* **Current version**: v1.1.0
 * **Release date**: 2025-05-13
-* **Last update**: 2025-05-13
+* **Last update**: 2026-03-10
 
 ### Licenses
 * **Dataset License**. The RDF datasets are released under _Creative Commons Attribution 4.0 International (CC BY 4.0)_
@@ -58,13 +62,27 @@ The data model combines the event-centric semantics of [CIDOC-CRM](https://cidoc
 
 Users must comply with the respective license terms when reusing data or code.
 
-### Statistics (v1.0.0)
+### Statistics (v1.1.0)
 
 * 2211 entities.
-* 12429 statements.
-* 7117 qualifying statements.
-* 12931 reference statements.
+* 15543 statements.
+* 7196 qualifying statements.
+* 18812 reference statements.
 * 128 documents processed.
+  
+### Version history
+
+**v1.1.0 (current release)**  
+- Added `mentions entity` helper property to document entities to improve navigation between documents and referenced entities.  
+- Added missing `is documented in` statements for some location entities.  
+- Added explicit reference to the scholarly source representing the AMSPO corpus.  
+- Expanded and clarified repository and Wiki documentation.  
+- Expanded and reorganized SPARQL example queries.  
+- Improved visibility of SPARQL queries and RDF/Turtle datasets.  
+- Updated dataset statistics.
+
+**v1.0.0**  
+- Initial public release of the MCKG dataset.
 
 ## Reproducibility
 
@@ -74,11 +92,11 @@ This repository provides all artefacts required to:
 * Examine validation constraints (ShEx / EntitySchemas).
 * Re-run SPARQL-based statistical analyses.
 
-The RDF datasets provided here correspond to the data ingested into the public Wikibase instance (version v1.0.0). The live MCKG instance and the repository together ensure reproducibility of the population pipeline described in the paper. 
+The RDF datasets provided here correspond to the data ingested into the public Wikibase instance (version v1.1.0). The live MCKG instance and the repository together ensure reproducibility of the population pipeline described in the paper. 
 
 ## Repository Structure
 All resources are bundled in _mckg.zip_ and organized as follows:
-* _datasets_ contains RDF datasets produced by applying our pipeline to the AMSPO corpus:
+* _datasets_ contains RDF datasets (Turtle format) produced by applying our pipeline to the AMSPO corpus:
   * _Community Dataset_ includes the RDF files generated from community contributions via semi-automatic analysis.
   * _Domain Expert Dataset_ includes the RDF files created from manual expert annotations.
 * _code_ contains Jupyter Notebooks implementing key pipeline components:
@@ -98,6 +116,14 @@ The MCKG is intended for:
 * Historians working with medieval charter corpora
 * Digital humanities researchers
 * Semantic Web researchers
+
+### Version history
+
+v1.1.0 (current release)
+- Added inverse helper property `mentions entity` in document entities to improve navigation and usability of the knowledge graph.
+
+v1.0.0
+- Initial public release of the MCKG dataset.
 
 ## Contact
 
