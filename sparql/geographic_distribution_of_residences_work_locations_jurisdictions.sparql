@@ -1,4 +1,4 @@
-#Provides a map with the residences (blue) work locations (red) and jurisdictions of held positions (green) that we can geolocate by federated query to Wikidata.
+#Geographic Distribution of Residences, Work Locations, and Jurisdictions
 PREFIX wb: <https://medievalcharterskg.wikibase.cloud/entity/>
 PREFIX wbt: <https://medievalcharterskg.wikibase.cloud/prop/direct/>
 PREFIX wd: <http://www.wikidata.org/entity/>
