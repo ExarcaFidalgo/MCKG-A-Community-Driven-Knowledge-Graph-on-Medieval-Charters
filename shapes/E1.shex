@@ -24,4 +24,5 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
    wdt:P61  @<Person>  *;       # Relative (qualified by wdt:P62 -kinship to subject)
    wdt:P67  xsd:string  ?;      # Title
    wdt:P66  xsd:string  ?;      # Regnal ordinal
+   wdt:P28 @<Document> +;      # Is documented in
 }
