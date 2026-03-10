@@ -5,5 +5,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 <Document>
 {
    wdt:P3  [wd:Q30]  ;
-   wdt:P1 xsd:string + ; # ID
+   wdt:P1 xsd:string + ; #ID
+   wdt:P71 . *; #Mentions Entity
 }
