@@ -1,0 +1,16 @@
+# Association Between Family Names and Occupations
+PREFIX wd: <https://medievalcharterskg.wikibase.cloud/entity/>
+PREFIX wdt: <https://medievalcharterskg.wikibase.cloud/prop/direct/>
+
+SELECT ?familyNameLabel ?occupationLabel (COUNT(?person) AS ?count)
+WHERE {
+  ?person wdt:P3 wd:Q16 .
+  ?person wdt:P50 ?familyName .
+  ?person wdt:P52 ?occupation .
+  
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" .
+  }
+}
+GROUP BY ?familyNameLabel ?occupationLabel
+ORDER BY DESC(?count)
