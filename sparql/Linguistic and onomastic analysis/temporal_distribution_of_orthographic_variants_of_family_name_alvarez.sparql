@@ -1,0 +1,34 @@
+#defaultView:LineChart
+PREFIX wd: <https://medievalcharterskg.wikibase.cloud/entity/>
+PREFIX wdt: <https://medievalcharterskg.wikibase.cloud/prop/direct/>
+PREFIX p: <https://medievalcharterskg.wikibase.cloud/prop/>
+PREFIX ps: <https://medievalcharterskg.wikibase.cloud/prop/statement/>
+PREFIX pq: <https://medievalcharterskg.wikibase.cloud/prop/qualifier/>
+
+SELECT ?year ?occurrences ?variantLabel ?variantEntity
+WHERE {
+  {
+    SELECT ?year ?variantLabel ?variantEntity (COUNT(DISTINCT ?document) AS ?occurrences)
+    WHERE {
+      wd:Q2022 p:P69 ?statement .
+      ?statement ps:P69 ?variant ;
+                 pq:P28 ?document .
+
+      {
+        SELECT ?document (MIN(?date) AS ?docDate)
+        WHERE {
+          ?document wdt:P71 ?entity .
+          ?entity wdt:P6 ?timespan .
+          ?timespan wdt:P32 ?date .
+        }
+        GROUP BY ?document
+      }
+
+      BIND(STR(YEAR(?docDate)) AS ?year)
+      BIND(STR(?variant) AS ?variantLabel)
+      BIND(IRI(CONCAT("urn:variant:", ENCODE_FOR_URI(STR(?variant)))) AS ?variantEntity)
+    }
+    GROUP BY ?year ?variantLabel ?variantEntity
+  }
+}
+ORDER BY ?year ?variantLabel
