@@ -1,0 +1,74 @@
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+SELECT ?referenceType ?count
+       (ROUND((?count * 100.0 / ?total) * 100) / 100 AS ?ratio)
+WHERE {
+
+  {
+    SELECT ?referenceType (COUNT(*) AS ?count)
+    WHERE {
+      {
+        SELECT ?statement
+               (MAX(?authFlag) AS ?hasAuth)
+               (MAX(?infFlag) AS ?hasInf)
+        WHERE {
+          ?statement prov:wasDerivedFrom ?ref .
+
+          BIND(
+            IF(EXISTS {
+              ?ref <https://medievalcharterskg.wikibase.cloud/prop/reference/P63> ?auth
+            }, 1, 0) AS ?authFlag
+          )
+
+          BIND(
+            IF(EXISTS {
+              ?ref <https://medievalcharterskg.wikibase.cloud/prop/reference/P68> ?inf
+            }, 1, 0) AS ?infFlag
+          )
+        }
+        GROUP BY ?statement
+      }
+
+      BIND(
+        IF(?hasAuth = 1 && ?hasInf = 1, "Stated in auth. source + Inferred",
+          IF(?hasAuth = 1, "Stated in auth. source",
+            IF(?hasInf = 1, "Inferred from", "Other")
+          )
+        ) AS ?referenceType
+      )
+
+      FILTER(?referenceType != "Other")
+    }
+    GROUP BY ?referenceType
+  }
+
+  {
+    SELECT (COUNT(*) AS ?total)
+    WHERE {
+      {
+        SELECT ?statement
+               (MAX(?authFlag) AS ?hasAuth)
+               (MAX(?infFlag) AS ?hasInf)
+        WHERE {
+          ?statement prov:wasDerivedFrom ?ref .
+
+          BIND(
+            IF(EXISTS {
+              ?ref <https://medievalcharterskg.wikibase.cloud/prop/reference/P63> ?auth
+            }, 1, 0) AS ?authFlag
+          )
+
+          BIND(
+            IF(EXISTS {
+              ?ref <https://medievalcharterskg.wikibase.cloud/prop/reference/P68> ?inf
+            }, 1, 0) AS ?infFlag
+          )
+        }
+        GROUP BY ?statement
+      }
+
+      FILTER(?hasAuth = 1 || ?hasInf = 1)
+    }
+  }
+}
+ORDER BY DESC(?count)
