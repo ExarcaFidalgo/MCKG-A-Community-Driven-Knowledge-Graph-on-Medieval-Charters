@@ -50,7 +50,7 @@ The data model combines the event-centric semantics of [CIDOC-CRM](https://cidoc
 ### Version
 * **Current version**: v1.1.0
 * **Release date**: 2025-05-13
-* **Last update**: 2026-03-10
+* **Last update**: 2026-03-11
 
 ### Licenses
 * **Dataset License**. The RDF datasets are released under _Creative Commons Attribution 4.0 International (CC BY 4.0)_
@@ -61,9 +61,9 @@ Users must comply with the respective license terms when reusing data or code.
 ### Statistics (v1.1.0)
 
 * 2211 entities.
-* 15543 statements.
+* 15542 statements.
 * 7196 qualifying statements.
-* 18812 reference statements.
+* 18810 reference statements.
 * 128 documents processed.
   
 ### Version history
