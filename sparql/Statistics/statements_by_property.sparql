@@ -1,0 +1,33 @@
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+SELECT ?propertyLabel ?count 
+       (ROUND((?count * 100.0 / ?total) * 100) / 100 AS ?ratio)
+WHERE {
+
+  {
+    SELECT ?property (COUNT(*) AS ?count)
+    WHERE {
+      ?item ?prop ?value .
+      FILTER(STRSTARTS(STR(?item), "https://medievalcharterskg.wikibase.cloud/entity/Q"))
+      FILTER(STRSTARTS(STR(?prop), "https://medievalcharterskg.wikibase.cloud/prop/direct/"))
+
+      BIND(IRI(REPLACE(STR(?prop), "/prop/direct/", "/entity/")) AS ?property)
+    }
+    GROUP BY ?property
+  }
+
+  {
+    SELECT (COUNT(*) AS ?total)
+    WHERE {
+      ?item ?prop ?value .
+      FILTER(STRSTARTS(STR(?item), "https://medievalcharterskg.wikibase.cloud/entity/Q"))
+      FILTER(STRSTARTS(STR(?prop), "https://medievalcharterskg.wikibase.cloud/prop/direct/"))
+    }
+  }
+
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" .
+    ?property rdfs:label ?propertyLabel .
+  }
+}
+ORDER BY DESC(?count)
