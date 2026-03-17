@@ -11,7 +11,7 @@ Submitted to the Semantic Web Journal.
 
 The **Medieval Charters Knowledge Graph (MCKG)** is a provenance-aware knowledge graph constructed from the **AMSPO medieval charter corpus**, modeling persons, institutions, events, properties, and genealogical relations described in medieval Spanish charters.
 
-The live Wikibase instance is publicly available at [Wikibase cloud](https://medievalcharterskg.wikibase.cloud/wiki/Main_Page).
+The live Wikibase instance is publicly available at [Wikibase cloud](https://medievalcharterskg.wikibase.cloud/wiki/Main_Page](https://medievalcharterskg.wikibase.cloud/wiki/Medieval_Charters_Knowledge_Graph).
 RDF datasets (Turtle format) used to populate the MCKG are available in the `datasets/` directory and can be downloaded directly for reuse in external applications: [Community annotations dataset](datasets/community_dataset.ttl) and [Domain expert annotations dataset](datasets/domain_expert_dataset.ttl).
 
 ## Table of Contents
@@ -32,7 +32,7 @@ RDF datasets (Turtle format) used to populate the MCKG are available in the `dat
 * **Language**: Medieval Spanish
 
 The corpus contains documentary records describing legal, economic, and social relationships between individuals and institutions.
-Each document entity in the MCKG includes the archival identifier used in the AMSPO corpus (e.g., AMSPO, FSV, nº XXXX), enabling users to locate the corresponding charter in the scholarly transcription cited in the original paper _(Felpeto Cueva J. El archivo de un artesano del siglo XIV: el orfebre Alfonso Fern´andez de Oviedo. doctoral thesis, University of Oviedo, 2023. URL https://digibuo.uniovi.es/dspace/handle/10651/71402. Accepted: 2024-02-16T11:28:22Z.)_.
+Each document entity in the MCKG includes the archival identifier used in the AMSPO corpus (e.g., AMSPO, FSV, nº XXXX), enabling users to locate the corresponding charter in the scholarly transcription cited in the original paper _(Felpeto Cueva J. El archivo de un artesano del siglo XIV: el orfebre Alfonso Fernández de Oviedo. doctoral thesis, University of Oviedo, 2023. URL https://digibuo.uniovi.es/dspace/handle/10651/71402. Accepted: 2024-02-16T11:28:22Z.)_.
 
 ## Knowledge Graph Scope
 
