@@ -12,7 +12,7 @@ Submitted to the Semantic Web Journal.
 The **Medieval Charters Knowledge Graph (MCKG)** is a provenance-aware knowledge graph constructed from the **AMSPO medieval charter corpus**, modeling persons, institutions, events, properties, and genealogical relations described in medieval Spanish charters.
 
 The live Wikibase instance is publicly available at [Wikibase cloud](https://medievalcharterskg.wikibase.cloud/wiki/Medieval_Charters_Knowledge_Graph).
-RDF datasets (Turtle format) used to populate the MCKG are available in the `datasets/` directory and can be downloaded directly for reuse in external applications: [Community annotations dataset](datasets/community_dataset.ttl) and [Domain expert annotations dataset](datasets/domain_expert_dataset.ttl).
+RDF datasets (Turtle format) used to populate the MCKG are available in the `datasets/` directory and can be downloaded directly for reuse in external applications: [Community annotations dataset](https://github.com/ExarcaFidalgo/MCKG-A-Community-Driven-Knowledge-Graph-on-Medieval-Charters/tree/master/datasets/Community%20Dataset) and [Domain expert annotations dataset](https://github.com/ExarcaFidalgo/MCKG-A-Community-Driven-Knowledge-Graph-on-Medieval-Charters/tree/master/datasets/Domain%20Expert%20Dataset).
 
 ## Table of Contents
 
