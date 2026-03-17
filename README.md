@@ -53,7 +53,7 @@ The data model combines the event-centric semantics of [CIDOC-CRM](https://cidoc
 * **Last update**: 2026-03-11
 
 ### Licenses
-* **Dataset License**. The RDF datasets are released under _Creative Commons Attribution 4.0 International (CC BY 4.0)_
+* **Dataset License**. The dataset is released under _Creative Commons Attribution 4.0 International (CC BY 4.0)_
 * **Code License**. The code in this repository is released under _MIT License_.
 
 Users must comply with the respective license terms when reusing data or code.
