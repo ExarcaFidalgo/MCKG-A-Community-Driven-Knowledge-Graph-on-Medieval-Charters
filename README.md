@@ -14,6 +14,8 @@ The **Medieval Charters Knowledge Graph (MCKG)** is a provenance-aware knowledge
 The live Wikibase instance is publicly available at [Wikibase cloud](https://medievalcharterskg.wikibase.cloud/wiki/Medieval_Charters_Knowledge_Graph).
 RDF datasets (Turtle format) used to populate the MCKG are available in the `datasets/` directory and can be downloaded directly for reuse in external applications: [Community annotations dataset](https://github.com/ExarcaFidalgo/MCKG-A-Community-Driven-Knowledge-Graph-on-Medieval-Charters/tree/master/datasets/Community%20Dataset) and [Domain expert annotations dataset](https://github.com/ExarcaFidalgo/MCKG-A-Community-Driven-Knowledge-Graph-on-Medieval-Charters/tree/master/datasets/Domain%20Expert%20Dataset).
 
+The dataset is also available at [Zenodo](https://doi.org/10.5281/zenodo.19436749).
+
 ## Table of Contents
 
 - [Corpus description](#corpus-description)
