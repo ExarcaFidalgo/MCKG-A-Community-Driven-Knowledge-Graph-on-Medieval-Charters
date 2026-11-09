@@ -1,0 +1,239 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D16P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D16Oc1, :D16Oc12.
+	
+:D16Oc1 a :PublicOffice;
+	crm:P1_is_identified_by "Rey en Castiella, en León, en Toledo, en Gallizia, en Sevilla, en Córdova, en Murçia, en Iahén, enno Algarabe";
+	:applies_to_jurisdiction :Castilla, :León, :Toledo, :Galicia, :Sevilla, :Córdoba, :Murcia, :Jaén, :Algarve.
+
+:D16Oc12 a :PublicOffice;
+	crm:P1_is_identified_by "Sennor de Vizcaya e de Molina";
+	:applies_to_jurisdiction :Vizcaya, :Molina.
+
+:D16P1b a crm:E21_Person ;
+    :givenName "Fernando" ;
+	:position_held :D16Oc1b.
+
+:D16Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+	
+:D16P48 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Alffonso";
+	:occupation :D16Oc2.
+	
+:D16Oc2 a :Occupation;
+	crm:P1_is_identified_by "Escrivan".
+
+:D16P77 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Alfonso";
+	:residence :Cortina.
+
+:D16P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D16P154;
+	:residence :Oviedo_Portal .
+
+:D16P115 a crm:E21_Person ;
+	:title "Don";
+    :givenName "Rodrig" ;
+    :familyName "Álvariz";
+	:position_held :D16Oc3.
+	
+:D16Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Adelantrado mayor por el rey enna tierra de León e de Asturias";
+	:applies_to_jurisdiction :Asturias, :León.
+
+:D16P120 a crm:E21_Person ;
+    :givenName "Lorienço" ;
+    :familyName "Apparicio de Avoli".
+
+:D16P147 a crm:E21_Person ;
+	:title "Don";
+    :givenName "Iohan";
+	:position_held :D16Oc4.
+	
+:D16Oc4 a :PublicOffice;
+	crm:P1_is_identified_by "Obispo de Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D16P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Fernández";
+	:occupation :D16Oc5 ;
+	:residence :Oviedo_Portal ;
+    :spouse :D16P103 .
+	
+:D16Oc5 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D16P208 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Fernándiz de Avoli".
+
+:D16P252 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Fernándiz";
+	:occupation :D16Oc6.
+	
+:D16Oc6 a :Occupation;
+	crm:P1_is_identified_by "Omne del Chantre".
+
+:D16P282 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Garçía";
+	:occupation :D16Oc7.
+	
+:D16Oc7 a :Occupation;
+	crm:P1_is_identified_by "Escrivan".
+
+:D16P430 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Nicolás";
+	:position_held :D16Oc8.
+	
+:D16Oc8 a :PublicOffice;
+	crm:P1_is_identified_by "Notario público del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D16P543 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez";
+	:occupation :D16Oc9.
+	
+:D16Oc9 a :Occupation;
+	crm:P1_is_identified_by "Escrivan".
+
+:D16P600 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Pérez";
+	:child :D16P696.
+
+:D16P659 a crm:E21_Person ;
+    :givenName "Sancha" ;
+    :familyName "Rodríguiz" ;
+    :spouse :D16P696 .
+
+:D16P696 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Suáriz";
+	:residence :Castañedo;
+	:occupation :D16Oc10;
+    :father :D16P600 ;
+    :mother :D16P739 ;
+    :spouse :D16P659 .
+	
+:D16Oc10 a :Occupation;
+	crm:P1_is_identified_by "Escudero".
+
+:D16P703 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Suáriz";
+	:occupation :D16Oc11.
+	
+:D16Oc11 a :Occupation;
+	crm:P1_is_identified_by "Omnes del Chantre".
+
+:D16P739 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Yánnez";
+	:child :D16P696.
+	
+:Castilla a crm:E53_Place ;
+    crm:P1_is_identified_by "Castiella" .
+	
+:León a crm:E53_Place ;
+    crm:P1_is_identified_by "León" .
+	
+:Asturias a crm:E53_Place ;
+    crm:P1_is_identified_by "Asturias" .
+	
+:Vizcaya a crm:E53_Place ;
+    crm:P1_is_identified_by "Vizcaya" .
+	
+:Molina a crm:E53_Place ;
+    crm:P1_is_identified_by "Molina" .
+	
+:Toledo a crm:E53_Place ;
+    crm:P1_is_identified_by "Toledo" .
+	
+:Galicia a crm:E53_Place ;
+    crm:P1_is_identified_by "Gallizia" .
+	
+:Sevilla a crm:E53_Place ;
+    crm:P1_is_identified_by "Sevilla" .
+	
+:Córdoba a crm:E53_Place ;
+    crm:P1_is_identified_by "Córdova" .
+	
+:Murcia a crm:E53_Place ;
+    crm:P1_is_identified_by "Murçia" .
+	
+:Jaén a crm:E53_Place ;
+    crm:P1_is_identified_by "Iahén" .
+	
+:Algarve a crm:E53_Place ;
+    crm:P1_is_identified_by "Algarabe" .
+	
+:Cortina a crm:E53_Place ;
+    crm:P1_is_identified_by "Cortina" .
+
+:Feligresía_de_San_Miguel_de_Váscones a crm:E53_Place ;
+    crm:P1_is_identified_by "San Miguel de Váscones" .
+
+:Feligresía_de_San_María_de_Vallo a crm:E53_Place ;
+    crm:P1_is_identified_by "Santa María de Vallo" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo, al Portal" .
+
+:Vallongo a crm:E53_Place ;
+    crm:P1_is_identified_by "Valongo" .
+
+:Castañedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Castannedo" .
+	
+:D16 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1329-04-29;
+  crm:P70i_is_documented_in :AMSPO1565;
+  crm:P23_transferred_title_from :D16P696 , :D16P659;
+  crm:P22_transferred_title_to :D16P154, :D16P103;
+  crm:P24_transferred_title_of :D16_Properties;
+  crm:P179_had_sales_price :D16payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D16P430;
+  crm:P14_carried_out_by :D16P543, :D16P48, :D16P282, :D16P120, :D16P208, :D16P252, :D16P703, :D16P77;
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1329-04-29 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1329-04-29"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+  
+:D16_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Borondes, :Vallongo, :Feligresía_de_San_Miguel_de_Váscones, :Feligresía_de_San_María_de_Vallo.
+	
+:AMSPO1565 a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1565" .
+  
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D16payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 30;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

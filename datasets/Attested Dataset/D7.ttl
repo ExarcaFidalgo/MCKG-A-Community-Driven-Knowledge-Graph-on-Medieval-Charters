@@ -1,0 +1,149 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D7P148 a crm:E21_Person ;
+    :givenName "Nicolao" ;
+    :familyName "Durániz";
+	:residence :Faro .
+
+:D7P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Fernándiz";
+	:relative_uncle :D7P696, :D7P707;
+	:occupation :D7Oc1 ;
+	:residence :Oviedo .
+	
+:D7Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D7P201 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Fernándiz";
+	:position_held :D7Oc2.
+	
+:D7Oc2 a :PublicOffice;
+	crm:P1_is_identified_by "Notario público del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D7P232 a crm:E21_Person ;
+    :givenName "Nicolao" ;
+    :familyName "Fernándiz";
+	:occupation :D7Oc3.
+	
+:D7Oc3 a :Occupation;
+	crm:P1_is_identified_by "Escriván".
+
+:D7P356 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Iohánniz";
+	:residence :Faro .
+
+:D7P422 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Michel";
+	:residence :Faro .
+
+:D7P508 a crm:E21_Person ;
+    :givenName "Elvira" ;
+    :familyName "Pérez" ;
+    :mother :D7P607 .
+
+:D7P600 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Pérez";
+    :sibling :D7P607 ;
+	:child :D7P696;
+	crm:P100_died_in :D7Death_1.
+	
+:D7Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D7.
+
+:D7P607 a crm:E21_Person ;
+    :givenName "Orraca" ;
+    :familyName "Pérez";
+    :child :D7P508 ;
+	:sibling :D7P600;
+	crm:P100_died_in :D7Death_2.
+	
+:D7Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D7.
+	
+:D7P696 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Suáriz";
+	:residence :Castañedo;
+    :relative_nephew :D7P154 ;
+	:relative_uncle :D7P740;
+	:mother :D7P739;
+	:father :D7P600;
+	:occupation :D7Oc4.
+	
+:D7Oc4 a :Occupation;
+	crm:P1_is_identified_by "Escudero".
+
+:D7P707 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Suáriz" ;
+	:relative_nephew :D7P154.
+
+:D7P739 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Yánnez";
+	:child :D7P696;
+	crm:P100_died_in :D7Death_3.
+	
+:D7Death_3 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D7.
+
+:D7P740 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Yánnez de Arllós";
+	:relative_nephew :D7P696;
+	:position_held :D7Oc5;
+	crm:P100_died_in :D7Death_4.
+	
+:D7Death_4 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D7.
+	
+:D7Oc5 a :PublicOffice;
+	crm:P1_is_identified_by "Canónigo de la Eglesia de Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Castañedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Castannedo" .
+	
+:Faro a crm:E53_Place ;
+    crm:P1_is_identified_by "Faro" .
+
+:D7 a crm:E8_Acquisition;
+  crm:P2_has_type :Disembargo;
+  crm:P4_has_time-span :Within_1327-09-04;
+  crm:P70i_is_documented_in :AMSPO1555;
+  crm:P23_transferred_title_from :D7P696;
+  crm:P22_transferred_title_to :D7P154;
+  crm:P24_transferred_title_of :D7_Properties;
+  crm:P14_carried_out_byPQ14.1-Notary :D7P201;
+  crm:P14_carried_out_by :D7P148, :D7P356, :D7P422, :D7P232;
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1327-09-04 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1327-09-04"^^xsd:date.
+
+:Disembargo a crm:E55_Type;
+   crm:P1_is_identified_by "Disembargo" .
+  
+:D7_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Borondes.
+	
+:AMSPO1555 a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1555" .
+  
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .

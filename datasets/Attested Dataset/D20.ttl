@@ -1,0 +1,137 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D20P1 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D20Oc1, :D20Oc7.
+	
+:D20Oc1 a :PublicOffice;
+	crm:P1_is_identified_by "Rey en Castiella, en León, en Toledo, en Gallizia, en Sevilla, en Córdova, en Murçia, en Iahén, enno Algarabe";
+	:applies_to_jurisdiction :Castilla, :León, :Toledo, :Galicia, :Sevilla, :Córdoba, :Murcia, :Jaén, :Algarve.
+
+:D20Oc7 a :PublicOffice;
+	crm:P1_is_identified_by "Sennor de Vizcaya e de Molina";
+	:applies_to_jurisdiction :Vizcaya, :Molina.
+	
+:D20P15 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Alffonso Chirildos".
+
+:D20P48 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Alffonso";
+	:occupation :D20Oc2.
+	
+:D20Oc2 a :Occupation;
+	crm:P1_is_identified_by "Escriván".
+
+:D20P147 a crm:E21_Person ;
+	:title "Don";
+    :givenName "Iohan";
+	:position_held :D20Oc3.
+	
+:D20Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Obispo de Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D20PB1 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "del Rosal".
+
+:D20P430 a crm:E21_Person ;
+    :givenName "Alffonsso"  ;
+    :familyName "Nicolás";
+	:position_held :D20Oc4.
+	
+:D20Oc4 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D20P543 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez";
+	:occupation :D20Oc5.
+	
+:D20Oc5 a :Occupation;
+	crm:P1_is_identified_by "Escriván".
+
+:D20P646 a crm:E21_Person ;
+    :givenName "Matíos" ;
+    :familyName "Rodríguiz";
+	:occupation :D20Oc6.
+	
+:D20Oc6 a :Occupation;
+	crm:P1_is_identified_by "Alfayate".
+	
+:Castilla a crm:E53_Place ;
+    crm:P1_is_identified_by "Castiella" .
+	
+:León a crm:E53_Place ;
+    crm:P1_is_identified_by "León" .
+	
+:Vizcaya a crm:E53_Place ;
+    crm:P1_is_identified_by "Vizcaya" .
+	
+:Molina a crm:E53_Place ;
+    crm:P1_is_identified_by "Molina" .
+	
+:Toledo a crm:E53_Place ;
+    crm:P1_is_identified_by "Toledo" .
+	
+:Galicia a crm:E53_Place ;
+    crm:P1_is_identified_by "Gallizia" .
+	
+:Sevilla a crm:E53_Place ;
+    crm:P1_is_identified_by "Sevilla" .
+	
+:Córdoba a crm:E53_Place ;
+    crm:P1_is_identified_by "Córdova" .
+	
+:Murcia a crm:E53_Place ;
+    crm:P1_is_identified_by "Murçia" .
+	
+:Jaén a crm:E53_Place ;
+    crm:P1_is_identified_by "Iahén" .
+	
+:Algarve a crm:E53_Place ;
+    crm:P1_is_identified_by "Algarabe" .
+	
+:Cortina a crm:E53_Place ;
+    crm:P1_is_identified_by "Cortina" .
+	
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+	
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+	
+:D20 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1329-06-18;
+  crm:P70i_is_documented_in :AMSPO1578;
+  crm:P179_had_sales_price :D20payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D20P430;
+  crm:P14_carried_out_by  :D20P543, :D20P48, :D20P646, :D20P15;
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1329-06-18 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1329-06-18"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+	
+:AMSPO1578 a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1578" .
+  
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D20payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 300;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+ 

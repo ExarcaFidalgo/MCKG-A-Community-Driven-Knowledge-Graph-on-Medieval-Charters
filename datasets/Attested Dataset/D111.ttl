@@ -1,0 +1,142 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D111P1 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D111Oc1b.
+
+:D111Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D111P48 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Alffonso";
+	:occupation :D111Oc1.
+	
+:D111Oc1 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D111P100 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Álvarez" ;
+	:residence :San_Romano;
+    :father :D111P691 ; 
+    :mother :D111P648 .
+
+:D111P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Fernández";
+	:occupation :D111Oc2 ;
+	:residence :Oviedo_Portal .
+	
+:D111Oc2 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D111P175 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Fernández";
+	:occupation :D111Oc3.
+	
+:D111Oc3 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D111P207 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Fernández";
+	:occupation :D111Oc4.
+	
+:D111Oc4 a :Occupation;
+	crm:P1_is_identified_by "Ortolano".
+
+:D111P233 a crm:E21_Person ;
+    :givenName "Nicolás" ;
+    :familyName "Fernández";
+	:position_held :D111Oc5.
+	
+:D111Oc5 a :PublicOffice;
+	crm:P1_is_identified_by "Notario público del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D111P648 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Rodríguez" ;
+    :child :D111P100 ;
+	crm:P100_died_in :D111Death_1.
+	
+:D111Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D111.
+
+:D111P668 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Sánchiz";
+	:occupation :D111Oc6.
+
+:D111Oc6 a :Occupation;
+	crm:P1_is_identified_by "Alfageme".
+
+:D111P691 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Suárez" ;
+    :child :D111P100 ;
+	crm:P100_died_in :D111Death_2.
+	
+:D111Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D111.
+
+:Felgueras a crm:E53_Place ;
+    crm:P1_is_identified_by "Felgueres" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+
+:Piñera a crm:E53_Place ;
+    crm:P1_is_identified_by "Pinnera" .
+
+:Posada a crm:E53_Place ;
+    crm:P1_is_identified_by "Possada" .
+
+:San_Romano a crm:E53_Place ;
+    crm:P1_is_identified_by "San Romano" .
+
+:Llanera a crm:E53_Place ;
+    crm:P1_is_identified_by "Llanera" .
+
+:D111 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1359-05-10;
+  crm:P70i_is_documented_in :AMSPO1738;
+  crm:P23_transferred_title_from :D111P100;
+  crm:P22_transferred_title_to :D111P154;
+  crm:P24_transferred_title_of :D111_Properties;
+  crm:P179_had_sales_price :D111payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D111P233;
+  crm:P14_carried_out_by :D111P668, :D111P48, :D111P175, :D111P207 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1359-05-10 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1359-05-10"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1738  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1738" .
+    
+:D111_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Felgueras, :Piñera, :Posada, :Llanera.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D111payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 15;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

@@ -1,0 +1,158 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D56P18 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Alfonso de la Rua";
+	:occupation :D56Oc1.
+	
+:D56Oc1 a :Occupation;
+	crm:P1_is_identified_by "Tendero".
+
+:D56P161 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz del Rosal";
+	:occupation :D56Oc2.
+	
+:D56Oc2 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D56P171 a crm:E21_Person ;
+    :givenName "Andrés" ;
+    :familyName "Ferrándiz de Villanova".
+
+:D56P233 a crm:E21_Person ;
+    :givenName "Nicolao" ;
+    :familyName "Ferrándiz";
+	:occupation :D56Oc3.
+	
+:D56Oc3 a :Occupation;
+	crm:P1_is_identified_by "Notario".
+
+:D56P338 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Iohan";
+	:occupation :D56Oc4.
+	
+:D56Oc4 a :Occupation;
+	crm:P1_is_identified_by "Entrogio".
+
+:D56P376 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Martíniz";
+	:position_held :D56Oc5.
+	
+:D56Oc5 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D56P394 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Martíniz";
+    :spouse :D56P455;
+	:child :D56P581;
+	:relative_grandchild :D56P525.
+
+:D56P455 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Peláiz";
+    :spouse :D56P394.
+
+:D56P525 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Pérez";
+    :residence :Borondes_Abajo;
+    :father :D56P581 ;
+	:sibling :D56PB1, :D56PB2 ;
+	:relative_grandfather :D56P394;
+	:relative_uncle :D56P537.
+
+:D56P537 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez" ;
+	:relative_nephew :D56P525, :D56PB2, :D56PB1.
+
+:D56P581 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Pérez" ;
+	:father :D56P394;
+    :child :D56P525 .
+	
+:D56PB1 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Pérez";
+	:sibling :D56P525, :D56PB2;
+	:relative_uncle :D56P537.
+	
+:D56PB2 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Garçía";
+	:sibling :D56P525, :D56PB1;
+	:relative_uncle :D56P537.
+
+:D56P681 a crm:E21_Person ;
+    :givenName "Aldonça" ;
+    :familyName "Suáriz";
+    :sibling :D56P726;
+    :residence :Sama;
+	:spouse :D56P704.
+	
+:D56P704 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Suáriz";
+	:spouse :D56P681.
+
+:D56P726 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Suáriz";
+    :sibling :D56P681;
+    :residence :Borondes_Arriba.
+	
+:Alfoz_de_Grado a crm:E53_Place ;
+    crm:P1_is_identified_by "Alfoz de Grado" .
+
+:Sama a crm:E53_Place ;
+    crm:P1_is_identified_by "Sadma" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+	
+:Borondes_Arriba a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes de Suso" .
+	
+:Borondes_Abajo a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes de Iuso" .
+
+:D56 a crm:E7_Activity;
+  crm:P2_has_type :Agreement;
+  crm:P4_has_time-span :Within_1338-06-21;
+  crm:P70i_is_documented_in :AMSPO1367;
+  crm:P17_was_motivated_by :D56_Properties;
+  crm:P14_carried_out_byPQ14.1-PartyA :D56P726, :D56P681;
+  crm:P14_carried_out_byPQ14.1-PartyB :D56P525;
+  crm:P14_carried_out_byPQ14.1-Notary :D56P376;
+  crm:P14_carried_out_by :D56P18, :D56P233, :D56P161, :D56P171, :D56P338; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1338-06-21 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1338-06-21"^^xsd:date.
+  
+:Agreement a crm:E55_Type;
+   crm:P1_is_identified_by "Agreement" .
+        
+:AMSPO1367  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1367" .
+    
+:D56_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Borondes_Abajo, :Borondes_Arriba, :Alfoz_de_Grado.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:PartyA a crm:E55_Type ;
+  crm:P1_is_identified_by "Party A" .
+  
+:PartyB a crm:E55_Type ;
+  crm:P1_is_identified_by "Party B" .
+

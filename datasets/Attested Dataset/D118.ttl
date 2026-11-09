@@ -1,0 +1,140 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D118P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D118Oc1b.
+
+:D118Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D118P86 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Alfonso de Veyga" ;
+	:child :D118P717.
+
+:D118P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D118Oc1 ;
+	:residence :Oviedo .
+	
+:D118Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D118P168 a crm:E21_Person ;
+    :givenName "Aldonza" ;
+	:sibling :D118P180;
+    :familyName "Fernández".
+
+:D118P180 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Ferrándiz";
+	:sibling :D118P168;
+	:occupation :D118Oc2.
+	
+:D118Oc2 a :Occupation;
+	crm:P1_is_identified_by "Escudero".
+
+:D118P188 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Ferrándiz" ;
+    :spouse :D118P717 .
+
+:D118P266 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Garçía";
+	:position_held :D118Oc3.
+	
+:D118Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Notario público del rey en la Pobla de Grado";
+	:applies_to_jurisdiction :Grado.
+
+:D118P408 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Martínez de Nores";
+	:occupation :D118Oc4.
+	
+:D118Oc4 a :Occupation;
+	crm:P1_is_identified_by "Pellitero".
+
+:D118P456 a crm:E21_Person ;
+    :givenName "Marcos" ;
+    :familyName "Peláiz de Váscones" .
+
+:D118P512 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :nickname "Fernán Blanco" .
+
+:D118P526 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Pérez";
+	:occupation :D118Oc5.
+	
+:D118Oc5 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D118P536 a crm:E21_Person ;
+    :givenName "Ignés" ;
+    :familyName "Pérez";
+	:child :D118P717.
+
+:D118P711 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Suáriz de Velandres".
+
+:D118P717 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Suáriz" ;
+    :father :D118P86 ;
+    :mother :D118P536 ;
+    :spouse :D118P188 .
+	
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+	
+:Grado a crm:E53_Place ;
+    crm:P1_is_identified_by "Grado" .
+
+:Traspiñera_ería a crm:E53_Place ;
+    crm:P1_is_identified_by "Hería de Traspinnera" .
+
+:Vega a crm:E53_Place ;
+    crm:P1_is_identified_by "Veyga" .
+
+:D118 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1359-12-30;
+  crm:P70i_is_documented_in :AMSPO1680;
+  crm:P23_transferred_title_from :D118P717, :D118P188;
+  crm:P22_transferred_title_to :D118P154;
+  crm:P24_transferred_title_of :D118_Properties;
+  crm:P179_had_sales_price :D118payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D118P266;
+  crm:P14_carried_out_by :D118P456, :D118P408, :D118P711, :D118P526 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1359-12-30 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1359-12-30"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1680  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1680" .
+    
+:D118_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Traspiñera_ería.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D118payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 33;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

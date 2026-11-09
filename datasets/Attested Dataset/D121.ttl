@@ -1,0 +1,124 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D121P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D121Oc1b.
+
+:D121Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D121P23 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Alfonso de Nalió".
+
+:D121P86 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Alfonso";
+	:residence :Vega_de_Rodrigo_Abril.
+
+:D121P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz de Oviedo";
+	:occupation :D121Oc1.
+	
+:D121Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D121P158 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:father :D121P200;
+	:occupation :D121Oc2.
+	
+:D121Oc2 a :Occupation;
+	crm:P1_is_identified_by "Carniçero".
+
+:D121P200 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Ferrándiz";
+	:father :D121P510;
+	:child :D121P158.
+
+:D121P245 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Ferrándiz de Borondes".
+
+:D121P255 a crm:E21_Person ;
+    :givenName "Teresa" ;
+    :familyName "Ferrándiz".
+
+:D121P266 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Garçía";
+	:position_held :D121Oc5.
+	
+:D121Oc5 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en la pobla de Grado";
+	:applies_to_jurisdiction :Grado.
+
+:D121P471 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Pérez";
+	:occupation :D121Oc3.
+	
+:D121Oc3 a :Occupation;
+	crm:P1_is_identified_by "Tellero".
+
+:D121P510 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Pérez";
+	:child :D121P200.
+
+:D121P526 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Pérez";
+	:occupation :D121Oc4.
+	
+:D121Oc4 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+	
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Varzaniella a crm:E53_Place ;
+    crm:P1_is_identified_by "Varzaniella" .
+
+:Vega_de_Rodrigo_Abril a crm:E53_Place ;
+    crm:P1_is_identified_by "Ueyga de Rodrigo Abril" .
+	
+:D121 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1360-03-22;
+  crm:P70i_is_documented_in :AMSPO1688;
+  crm:P23_transferred_title_from :D121P86;
+  crm:P22_transferred_title_to :D121P154;
+  crm:P24_transferred_title_of :D121_Properties;
+  crm:P179_had_sales_price :D121payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D121P266;
+  crm:P14_carried_out_by :D121P158, :D121P471, :D121P23, :D121P526, :D121P245;  
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1360-03-22 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1360-03-22"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1688  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1688" .
+    
+:D121_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Varzaniella.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D121payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 6;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .

@@ -1,0 +1,153 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D116P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D116Oc1b.
+
+:D116Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D116P146 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Domínguiz" ;
+    :child :D116P255  ;
+	crm:P100_died_in :D116Death_1.
+	
+:D116Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D116.
+
+:D116P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D116Oc1 ;
+	:residence :Oviedo .
+	
+:D116Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D116P175 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Ferrándiz";
+	:occupation :D116Oc2.
+	
+:D116Oc2 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D116P197 a crm:E21_Person ;
+    :givenName "Gutier" ;
+    :familyName "Ferrándiz" ;
+    :child :D116P255 ;
+	crm:P100_died_in :D116Death_2.
+	
+:D116Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D116.
+
+:D116P205 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Ferrándiz";
+	:occupation :D116Oc7.
+	
+:D116Oc7 a :Occupation;
+	crm:P1_is_identified_by "Mercador".
+
+:D116P221 a crm:E21_Person ;
+    :givenName "Martín" ;
+    :familyName "Ferrándiz";
+	:occupation :D116Oc3;
+	:work_location :Oviedo.
+	
+:D116Oc3 a :Occupation;
+	crm:P1_is_identified_by "Monge de San Viçenti".
+
+:D116P233 a crm:E21_Person ;
+    :givenName "Nicolás" ;
+    :familyName "Ferrándiz";
+	:position_held :D116Oc4.
+	
+:D116Oc4 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D116P247 a crm:E21_Person ;
+    :givenName "Ruy" ;
+    :familyName "Ferrándiz";
+	:occupation :D116Oc5.
+	
+:D116Oc5 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D116P255 a crm:E21_Person ;
+    :givenName "Teresa" ;
+    :familyName "Ferrándiz" ;
+	:residence :Somines;
+    :father :D116P197 ; 
+    :mother :D116P146 ; 
+    :spouse :D116P401 .
+
+:D116P320 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Gonçáliz de Ruy Seco".
+
+:D116P372 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Martíniz";
+	:occupation :D116Oc6;
+	:work_location :Oviedo.
+	
+:D116Oc6 a :Occupation;
+	crm:P1_is_identified_by "Portero del Monesterio de San Viçenti".
+
+:D116P401 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Martíniz" ;
+    :spouse :D116P255 .
+
+:D116P505 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Pérez de Perediello".
+	
+:Somines a crm:E53_Place ;
+    crm:P1_is_identified_by "Somines" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Sienra_de_Perediella_ería a crm:E53_Place ;
+    crm:P1_is_identified_by "Sienra de Perediella, ería" .
+
+:D116 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1359-12-08;
+  crm:P70i_is_documented_in :AMSPO1683;
+  crm:P23_transferred_title_from :D116P255, :D116P401;
+  crm:P22_transferred_title_to :D116P154;
+  crm:P24_transferred_title_of :D116_Properties;
+  crm:P179_had_sales_price :D116payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D116P233;
+  crm:P14_carried_out_by :D116P221, :D116P247, :D116P372, :D116P175 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1359-12-08 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1359-12-08"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1683  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1683" .
+    
+:D116_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Sienra_de_Perediella_ería.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D116payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 20;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .

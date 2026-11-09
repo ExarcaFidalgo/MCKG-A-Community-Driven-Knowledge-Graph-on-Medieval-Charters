@@ -1,0 +1,125 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D8P69 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Alffonso";
+	:occupation :D8Oc1.
+	
+:D8Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D8P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Fernándiz";
+	:relative_uncle :D8P723, :D8P707;
+	:occupation :D8Oc2 ;
+	:residence :Oviedo .
+	
+:D8Oc2 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D8P201 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Fernándiz";
+	:position_held :D8Oc3.
+	
+:D8Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Notario público del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D8P508 a crm:E21_Person ;
+    :givenName "Elvira" ;
+    :familyName "Pérez" ;
+    :mother :D8P607 . 
+
+:D8P600 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Pérez";
+    :sibling :D8P607 ;
+	:child :D8P723;
+	crm:P100_died_in :D8Death_1.
+	
+:D8Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D8.
+
+:D8P607 a crm:E21_Person ;
+    :givenName "Orraca" ;
+    :familyName "Pérez";
+    :child :D8P508 ;
+	:sibling :D8P600;
+	crm:P100_died_in :D8Death_2.
+	
+:D8Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D8.
+
+:D8P653 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Rodríguiz";
+	:occupation :D8Oc4.
+	
+:D8Oc4 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D8P707 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Suáriz";
+	:relative_nephew :D8P154.
+
+:D8P723 a crm:E21_Person ;
+    :givenName "Menén" ;
+    :familyName "Suáriz";
+	:mother :D8P739;
+	:father :D8P600;
+	:residence :Borondes;
+    :relative_nephew :D8P154 ;
+	:occupation :D8Oc5.
+	
+:D8Oc5 a :Occupation;
+	crm:P1_is_identified_by "Escudero".
+
+:D8P739 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Yánnez";
+	:child :D8P723;
+	crm:P100_died_in :D8Death_3.
+	
+:D8Death_3 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D8.
+
+:D8P742 a crm:E21_Person ;
+    :givenName "Rodrigo" ;
+    :familyName "Yánnez de Trassantisso".
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:D8 a crm:E8_Acquisition;
+  crm:P2_has_type :Disembargo;
+  crm:P4_has_time-span :Within_1327-09-18;
+  crm:P70i_is_documented_in :AMSPO1559;
+  crm:P23_transferred_title_from :D8P723;
+  crm:P22_transferred_title_to :D8P154, :D8P103;
+  crm:P24_transferred_title_of :D8_Properties;
+  crm:P14_carried_out_byPQ14.1-Notary :D8P201;
+  crm:P14_carried_out_by :D8P69, :D8P653, :D8P742 ;
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1327-09-18 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1327-09-18"^^xsd:date.
+
+:Disembargo a crm:E55_Type;
+   crm:P1_is_identified_by "Disembargo" .
+  
+:D8_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Borondes.
+	
+:AMSPO1559 a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1559" .
+  
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .

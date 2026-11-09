@@ -1,0 +1,133 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D51P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D51Oc1b.
+
+:D51Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D51P40 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Alfonso";
+	:father :D51P485.
+
+:D51P63 a crm:E21_Person ;
+    :givenName "Nicolao" ;
+    :familyName "Alfonso";
+	:occupation :D51Oc1;
+	:father :D51P485.
+	
+:D51Oc1 a :Occupation;
+	crm:P1_is_identified_by "Clérigo".
+
+:D51P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D51P154;
+	:residence :Oviedo_Portal .
+
+:D51P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D51Oc2 ;
+    :spouse :D51P103 ;
+	:residence :Oviedo_Portal .
+	
+:D51Oc2 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D51P213 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Ferrándiz de Loriana".
+
+:D51P376 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Martíniz";
+	:position_held :D51Oc3.
+	
+:D51Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D51P394 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Martíniz".
+
+:D51P485 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Pérez de San Miguel de la Premanna";
+	:child :D51P40, :D51P63.
+
+:D51P527 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Pérez";
+	:residence :Borondes_Abajo;
+	:father :D51PB1.
+	
+:D51PB1 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Pérez";
+	:child :D51P527.
+
+:D51P543 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez";
+	:occupation :D51Oc4.
+	
+:D51Oc4 a :Occupation;
+	crm:P1_is_identified_by "Escriván".
+
+:D51P683 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Suáriz Gurrión".
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+	
+:Borondes_Abajo a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes de Iuso" .
+
+:Eres_ería a crm:E53_Place ;
+    crm:P1_is_identified_by "Ería de Heros" .
+
+:D51 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1335-06-05;
+  crm:P70i_is_documented_in :AMSPO1603;
+  crm:P23_transferred_title_from :D51P527;
+  crm:P22_transferred_title_to :D51P154, :D51P103;
+  crm:P24_transferred_title_of :D51_Properties;
+  crm:P179_had_sales_price :D51payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D51P376;
+  crm:P14_carried_out_by :D51P485 , :D51P40, :D51P63, :D51P213, :D51P683, :D51P543 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1335-06-05 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1335-06-05"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1603  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1603" .
+    
+:D51_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Eres_ería.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D51payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 15;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

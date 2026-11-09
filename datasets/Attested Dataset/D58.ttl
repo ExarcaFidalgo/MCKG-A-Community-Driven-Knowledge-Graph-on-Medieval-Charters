@@ -1,0 +1,143 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D58P1 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D58Oc1b.
+
+:D58Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D58P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D58P154;
+	:residence :Oviedo_Portal .
+
+:D58P107 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+    :child :D58P493 ;
+	crm:P100_died_in :D58Death_1.
+	
+:D58Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D58.
+
+:D58P117 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Andreo";
+	:occupation :D58Oc1.
+	
+:D58Oc1 a :Occupation;
+	crm:P1_is_identified_by "Notario".
+
+:D58P132 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Díaz";
+	:occupation :D58Oc2.
+	
+:D58Oc2 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D58P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Fernándiz";
+	:occupation :D58Oc3 ;
+	:spouse :D58P103;
+	:residence :Oviedo_Portal .
+	
+:D58Oc3 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D58P201 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Fernándiz";
+	:position_held :D58Oc4.
+	
+:D58Oc4 a :PublicOffice;
+	crm:P1_is_identified_by "Notario público del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D58P376 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Martíniz";
+	:position_held :D58Oc5.
+	
+:D58Oc5 a :PublicOffice;
+	crm:P1_is_identified_by "Notario".
+	
+:D58P458 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Peláyz de Riosa";
+    :nickname "Pero Escantola".
+
+:D58P493 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Périz" ;
+    :residence :Borondes;
+    :father :D58P726 ;
+    :mother :D58P107 .
+
+:D58P726 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Suáriz" ;
+    :child :D58P493 ;
+	crm:P100_died_in :D58Death_2.
+	
+:D58Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D58. 
+
+:Las_Pevidas a crm:E53_Place ;
+    crm:P1_is_identified_by "La Pivida" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+
+:D58 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1340-07-17;
+  crm:P70i_is_documented_in :AMSPO1613;
+  crm:P23_transferred_title_from :D58P493; 
+  crm:P22_transferred_title_to  :D58P154, :D58P103;
+  crm:P24_transferred_title_of :D58_Properties ;
+  crm:P179_had_sales_price :D58payment_1, :D58payment_2;
+  crm:P14_carried_out_byPQ14.1-Notary :D58P201;
+  crm:P14_carried_out_by :D58P117, :D58P376, :D58P458, :D58P132; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1340-07-17 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1340-07-17"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1613  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1613" .
+    
+:D58_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Las_Pevidas.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D58payment_1 a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 6;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+  
+:D58payment_2 a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 8;
+	crm:P180_has_currency :Dinero.
+	
+:Dinero a crm:E98_Currency ;
+  crm:P1_is_identified_by "Dinero" .

@@ -1,0 +1,126 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D113P1 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D113Oc1b.
+
+:D113Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D113P86 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Alffonso de Veyga" ;
+	:child :D113P717.
+
+:D113P101 a crm:E21_Person ;
+    :givenName "Loys" ;
+    :familyName "Álvariz";
+	:occupation :D113Oc4;
+	:residence :Grado.
+	
+:D113Oc4 a :Occupation;
+	crm:P1_is_identified_by "Clérigo".
+
+:D113P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D113Oc1 ;
+	:residence :Oviedo .
+	
+:D113Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+	
+:D113P188 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Ferrándiz";
+    :spouse :D113P717 .
+
+:D113P275 a crm:E21_Person ;
+    :givenName "Gutier" ;
+    :familyName "Garçía";
+	:position_held :D113Oc2.
+	
+:D113Oc2 a :PublicOffice;
+	crm:P1_is_identified_by "Notario público del rey enna pobla de Grado";
+	:applies_to_jurisdiction :Grado.
+
+:D113P283 a crm:E21_Person ;
+    :givenName "Lope" ;
+    :familyName "Garçía";
+	:occupation :D113Oc3.
+	
+:D113Oc3 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D113P536 a crm:E21_Person ;
+    :givenName "Ingnés" ;
+    :familyName "Pérez";
+	:child :D113P717.
+
+:D113P596 a crm:E21_Person ;
+    :givenName "Ruy" ;
+    :familyName "Pérez de Murias".
+
+:D113P713 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Suáriz";
+	:father :D113PB1.
+	
+:D113PB1 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :nickname "Gonçalo Gorrión";
+	:child :D113P713.
+
+:D113P717 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Suáriz" ;
+    :father :D113P86 ;
+    :mother :D113P536 ;
+    :spouse :D113P188 .
+
+:Gargantella a crm:E53_Place ;
+    crm:P1_is_identified_by "Gargantella" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Grado a crm:E53_Place ;
+    crm:P1_is_identified_by "Grado".
+
+:D113 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1359-06-20;
+  crm:P70i_is_documented_in :AMSPO1663;
+  crm:P23_transferred_title_from :D113P717, :D113P188;
+  crm:P22_transferred_title_to :D113P154;
+  crm:P24_transferred_title_of :D113_Properties;
+  crm:P179_had_sales_price :D113payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D113P275;
+  crm:P14_carried_out_by :D113P283, :D113P596, :D113P713 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1359-06-20 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1359-06-20"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1663  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1663" .
+    
+:D113_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Gargantella.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D113payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 12;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

@@ -1,0 +1,230 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D6P1 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D6Oc1, :D6Oc12 .
+	
+:D6Oc1 a :PublicOffice;
+	crm:P1_is_identified_by "Rey en Castiella, en León, en Toledo, en Galliçia, en Sevilla, en Córdova, en Murçia, en Iahén, en Algarabe";
+	:applies_to_jurisdiction :Castilla, :León, :Toledo, :Galicia, :Sevilla, :Córdoba, :Murcia, :Jaén, :Algarve.
+
+:D6P1b a crm:E21_Person ;
+    :givenName "Fernando" ;
+	:position_held :D6Oc1b.
+
+:D6Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D6Oc12 a :PublicOffice;
+	crm:P1_is_identified_by "Sennor de Vizcaya e de Molina";
+	:applies_to_jurisdiction :Vizcaya, :Molina.
+	
+:D6PB1 a crm:E21_Person ;
+    :givenName "Alffonso" .
+
+:D6P91 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Alvariz Osoyro";
+	:position_held :D6Oc2.
+	
+:D6Oc2 a :PublicOffice;
+	crm:P1_is_identified_by "Merino mayor por el rey en tierra de León e de Asturias";
+	:applies_to_jurisdiction :Asturias, :León.
+
+:D6P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D6P154;
+	:residence :Oviedo_Portal.
+
+:D6P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Fernándiz";
+    :spouse :D6P103 ;
+	:occupation :D6Oc3 ;
+	:residence :Oviedo_Portal .
+	
+:D6Oc3 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D6P306 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Gonçáliz" ;
+    :father :D6P708 ; 
+    :spouse :D6P501 ; 
+	:residence :Oviedo_Portal.
+
+:D6P347 a crm:E21_Person ;
+    :givenName "Bartolomé" ;
+    :familyName "Iohanniz";
+	:occupation :D6Oc4.
+	
+:D6Oc4 a :Occupation;
+	crm:P1_is_identified_by "Carpentero".
+
+:D6P430 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Nicolás";
+	:position_held :D6Oc5.
+	
+:D6Oc5 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico por el rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D6P439 a crm:E21_Person ;
+    :givenName "Oddo";
+	:position_held :D6Oc6.
+	
+:D6Oc6 a :PublicOffice;
+	crm:P1_is_identified_by "Obispo de Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D6P443 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Peláiz";
+	:occupation :D6Oc7.
+	
+:D6Oc7 a :Occupation;
+	crm:P1_is_identified_by "Correero".
+
+:D6P467 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Pérez";
+	:occupation :D6Oc8.
+	
+:D6Oc8 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D6P473 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Pérez de Siero";
+	:occupation :D6Oc9.
+	
+:D6Oc9 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D6P501 a crm:E21_Person ;
+    :givenName "Catalina" ;
+    :familyName "Pérez";
+	:residence :Oviedo_Portal ;
+    :spouse :D6P306 . 
+
+:D6P543 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez";
+	:occupation :D6Oc10.
+	
+:D6Oc10 a :Occupation;
+	crm:P1_is_identified_by "Escriván".
+
+:D6P653 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Rodriguiz";
+	:occupation :D6Oc11.
+	
+:D6Oc11 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D6P708 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Suáriz de Grandín" ;
+    :child :D6P306 ;
+	crm:P100_died_in :D6Death_1.
+	
+:D6Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D6.
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+
+:Felgueras a crm:E53_Place ;
+    crm:P1_is_identified_by "Felgueras" .
+
+:Ondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Ondes" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+
+:Piñera a crm:E53_Place ;
+    crm:P1_is_identified_by "Pinnera" .
+
+:Vallongo a crm:E53_Place ;
+    crm:P1_is_identified_by "Vallongo" .
+	
+:Castilla a crm:E53_Place ;
+    crm:P1_is_identified_by "Castiella" .
+	
+:León a crm:E53_Place ;
+    crm:P1_is_identified_by "León" .
+	
+:Asturias a crm:E53_Place ;
+    crm:P1_is_identified_by "Asturias" .
+	
+:Vizcaya a crm:E53_Place ;
+    crm:P1_is_identified_by "Vizcaya" .
+	
+:Molina a crm:E53_Place ;
+    crm:P1_is_identified_by "Molina" .
+	
+:Toledo a crm:E53_Place ;
+    crm:P1_is_identified_by "Toledo" .
+	
+:Galicia a crm:E53_Place ;
+    crm:P1_is_identified_by "Galliçia" .
+	
+:Sevilla a crm:E53_Place ;
+    crm:P1_is_identified_by "Sevilla" .
+	
+:Córdoba a crm:E53_Place ;
+    crm:P1_is_identified_by "Córdova" .
+	
+:Murcia a crm:E53_Place ;
+    crm:P1_is_identified_by "Murçia" .
+	
+:Jaén a crm:E53_Place ;
+    crm:P1_is_identified_by "Iahén" .
+	
+:Algarve a crm:E53_Place ;
+    crm:P1_is_identified_by "Algarabe" .
+	
+:D6 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1327-05-02;
+  crm:P70i_is_documented_in :AMSPO1628;
+  crm:P23_transferred_title_from :D6P306, :D6P501;
+  crm:P22_transferred_title_to :D6P154, :D6P103;
+  crm:P24_transferred_title_of :D6_Properties;
+  crm:P179_had_sales_price :D6payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D6P430;
+  crm:P14_carried_out_by :D6P653, :D6P467, :D6P473, :D6P443, :D6P347,  :D6P543;
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1327-05-02 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1327-05-02"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+  
+:D6_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Borondes, :Vallongo, :Ondes, :Piñera, :Felgueras.
+	
+:AMSPO1628 a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1628" .
+  
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D6payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 100;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

@@ -1,0 +1,162 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D35P1b a crm:E21_Person ;
+    :givenName "Fernando" ;
+	:position_held :D35Oc1b.
+
+:D35Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D35P3 a crm:E21_Person ;
+    :givenName "Aldonça" ;
+    :familyName "Alfonso" ;
+    :father :D35P486  ; 
+    :mother :D35P281  ; 
+    :relative_grandfather :D35P625 ;
+    :relative_grandmother :D35P92 ;
+    :sibling :D35P30.
+
+:D35P30 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Alfonso" ;
+    :father :D35P486  ; 
+    :mother :D35P281  ; 
+    :relative_grandfather :D35P625 ;
+    :relative_grandmother :D35P92 ;
+    :sibling :D35P3 .
+
+:D35P92 a crm:E21_Person ;
+    :givenName "Cezilla" ;
+    :familyName "Álvariz";
+	:relative_grandchild :D35P3, :D35P30;
+	crm:P100_died_in :D35Death_1.
+	
+:D35Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D35.
+
+:D35P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:residence :Oviedo_Portal ;
+	:spouse :D35P154.
+
+:D35P117 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Andreo";
+	:position_held :D35Oc1.
+	
+:D35Oc1 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D35P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D35Oc2 ;
+	:residence :Oviedo_Portal ;
+    :spouse :D35P103 .
+	
+:D35Oc2 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D35P219 a crm:E21_Person ;
+    :givenName "Martín" ;
+    :familyName "Ferrándiz de Granda".
+
+:D35P281 a crm:E21_Person ;
+    :givenName "Mayor" ;
+    :familyName "Garçía de Bercio" ;
+    :child  :D35P3, :D35P30;
+	crm:P100_died_in :D35Death_2.
+	
+:D35Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D35.
+
+:D35P486 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Pérez de Bercio" ;
+    :child  :D35P3, :D35P30;
+	crm:P100_died_in :D35Death_3.
+	
+:D35Death_3 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D35.
+
+:D35P534 a crm:E21_Person ;
+    :givenName "Gutier" ;
+    :familyName "Pérez";
+	:residence :Lamedo.
+
+:D35P625 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Rodríguiz";
+	:relative_grandchild :D35P3, :D35P30;
+	crm:P100_died_in :D35Death_4.
+	
+:D35Death_4 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D35.
+
+:D35P631 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Rodríguiz";
+	:occupation :D35Oc3;
+	:employer :D35PB1.
+	
+:D35Oc3 a :Occupation;
+	crm:P1_is_identified_by "Criado".
+	
+:D35PB1 a crm:E21_Person ;
+	:title "Don";
+    :givenName "Fernán" ;
+    :familyName "Álvariz";
+	:occupation :D35Oc4.
+	
+:D35Oc4 a :Occupation;
+	crm:P1_is_identified_by "Obispo".
+	
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+	
+:Lamedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Lamedo" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+	
+:D35 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1333-03-09;
+  crm:P70i_is_documented_in :AMSPO1597;
+  crm:P23_transferred_title_from :D35P3, :D35P30;
+  crm:P22_transferred_title_to :D35P154, :D35P103;
+  crm:P24_transferred_title_of :D35_Properties;
+  crm:P179_had_sales_price :D35payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D35P117;
+  crm:P14_carried_out_by :D35P534, :D35P631, :D35P219; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1333-03-09 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1333-03-09"^^xsd:date.
+   
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+	
+:AMSPO1597 a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1597" .
+    
+:D35_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Borondes.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D35payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 15;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .

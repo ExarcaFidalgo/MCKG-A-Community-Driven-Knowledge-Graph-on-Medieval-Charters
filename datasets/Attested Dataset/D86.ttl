@@ -1,0 +1,129 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D86P1 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D86Oc1b.
+
+:D86Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D86P55 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Alfonso de Godos".
+
+:D86P96 a crm:E21_Person ;
+    :givenName "Gutier" ;
+    :familyName "Álvariz de Pentenno".
+
+:D86P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D86P154;
+	crm:P100_died_in :D86Death_1.
+	
+:D86Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D86.
+
+:D86P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D86Oc1 ;
+	:spouse :D86P103;
+	:residence :Oviedo_Portal .
+	
+:D86Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D86P233 a crm:E21_Person ;
+    :givenName "Nicolás" ;
+    :familyName "Ferrándiz";
+	:position_held :D86Oc2.
+	
+:D86Oc2 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D86P438 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Nieto de la Pobla".
+
+:D86P522 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Pérez";
+	:residence :Borondes.
+
+:D86P555 a crm:E21_Person ;
+    :givenName "Iulián" ;
+    :familyName "Pérez";
+	:occupation :D86Oc3.
+	
+:D86Oc3 a :Occupation;
+	crm:P1_is_identified_by "Requero".
+
+:D86P590 a crm:E21_Person ;
+    :givenName "Peley" ;
+    :familyName "Pérez de Viedes".
+
+:D86P636 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Rodríguiz de Trasona".
+
+:D86P706 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Suáriz de la Fonte".
+
+:Las_Vallinas a crm:E53_Place ;
+    crm:P1_is_identified_by "La Vallina" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+
+:Cennales_valle a crm:E53_Place ;
+    crm:P1_is_identified_by "Valle de Çenales" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+
+:D86 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1347-01-24;
+  crm:P70i_is_documented_in :AMSPO1650;
+  crm:P23_transferred_title_from :D86P522;
+  crm:P22_transferred_title_to :D86P154, :D86G1;
+  crm:P24_transferred_title_of :D86_Properties;
+  crm:P179_had_sales_price :D86payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D86P233;
+  crm:P14_carried_out_by :D86P590, :D86P55, :D86P555, :D86P636 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1347-01-24 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1347-01-24"^^xsd:date.
+  
+:D86G1 a crm:E74_Group ;
+    crm:P1_is_identified_by "Hijos de Alfonso Fernández y María Álvarez" . 
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1650  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1650" .
+    
+:D86_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Las_Vallinas, :Cennales_valle.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D86payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 13;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

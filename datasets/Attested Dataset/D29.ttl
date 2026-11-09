@@ -1,0 +1,129 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D29P1b a crm:E21_Person ;
+    :givenName "Fernando" ;
+	:position_held :D29Oc1b.
+
+:D29Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D29P41 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Alfonso";
+	:occupation :D29Oc1.
+	
+:D29Oc1 a :Occupation;
+	crm:P1_is_identified_by "Alcalle".
+
+:D29P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D29P154;
+	:residence :Oviedo .
+
+:D29P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Fernándiz";
+	:occupation :D29Oc2 ;
+	:residence :Oviedo ;
+    :spouse :D29P103 .
+	
+:D29Oc2 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D29P201 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Fernándiz";
+	:position_held :D29Oc3.
+	
+:D29Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Notario público del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D29P257 a crm:E21_Person ;
+    :givenName "Orraca" ;
+    :familyName "Fernándiz";
+	:residence :Borondes;
+    :spouse :D29P729 .
+
+:D29P282 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "García";
+	:occupation :D29Oc4.
+	
+:D29Oc4 a :Occupation;
+	crm:P1_is_identified_by "Escriván".
+
+:D29P418 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Menéndez";
+	:occupation :D29Oc5.
+	
+:D29Oc5 a :Occupation;
+	crm:P1_is_identified_by "Mercador".
+
+:D29P564 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Pérez De Borondes de Iuso".
+
+:D29P663 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Rodríguez" ;
+	:child :D29P729 . 
+
+:D29P689 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Suáriz de la pobla de Grado".
+
+:D29P729 a crm:E21_Person ;
+    :givenName "Pedro" ;
+    :familyName "Suáriz" ;
+	:residence :Borondes;
+    :father :D29P663 ; 
+    :spouse :D29P257 . 
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+	
+:Las_Vallinas a crm:E53_Place ;
+  crm:P1_is_identified_by "La Vallina" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+
+:D29 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1332-04-21;
+  crm:P70i_is_documented_in :AMSPO1584;
+  crm:P23_transferred_title_from :D29P729, :D29P257;
+  crm:P22_transferred_title_to :D29P154, :D29P103;
+  crm:P24_transferred_title_of :D29_Properties;
+  crm:P179_had_sales_price :D29payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D29P201;
+  crm:P14_carried_out_by :D29P41, :D29P418, :D29P282;  
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1332-04-21 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1332-04-21"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+	
+:AMSPO1584 a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1584" .
+    
+:D29_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Las_Vallinas.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D29payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 18;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

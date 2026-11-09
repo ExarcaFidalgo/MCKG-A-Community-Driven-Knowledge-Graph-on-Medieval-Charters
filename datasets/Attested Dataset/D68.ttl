@@ -1,0 +1,123 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D68P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D68Oc1b.
+
+:D68Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D68P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D68P154.
+
+:D68P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D68Oc1 ;
+	:spouse :D68P103.
+	
+:D68Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D68P276 a crm:E21_Person ;
+    :givenName "Ignés" ;
+    :familyName "Garçía";
+	:father :D68P298.
+
+:D68P298 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Gonçáliz Cabacana";
+	:child :D68P276;
+	crm:P100_died_in :D68Death_1.
+	
+:D68Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D68.
+
+:D68P376 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Martíniz";
+	:position_held :D68Oc2.
+	
+:D68Oc2 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D68P442 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Pacho".
+	
+:D68PB2 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Díaz";
+	:occupation :D68Oc4;
+	:employer :D68P442.
+
+:D68Oc4 a :Occupation;
+	crm:P1_is_identified_by "Criado".
+
+:D68P445 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Peláiz".
+
+:D68P522 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Pérez".
+
+:D68P576 a crm:E21_Person ;
+    :givenName "Niçola" ;
+    :familyName "Pérez";
+	:occupation :D68Oc3;
+	:employer :D68PB1.
+	
+:D68Oc3 a :Occupation;
+	crm:P1_is_identified_by "Criado".
+	
+:D68PB1 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Nicolás".
+	
+:Entretaranos a crm:E53_Place ;
+    crm:P1_is_identified_by "Entretáranos" .
+	
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:D68 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1342-04-19;
+  crm:P70i_is_documented_in :AMSPO1624;
+  crm:P23_transferred_title_from :D68P276;
+  crm:P22_transferred_title_to :D68P154, :D68P103;
+  crm:P24_transferred_title_of :D68_Properties;
+  crm:P179_had_sales_price :D68payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D68P376;
+  crm:P14_carried_out_by :D68P442, :D68PB2, :D68P576 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1342-04-19 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1342-04-19"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1624  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1624" .
+    
+:D68_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Entretaranos.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D68payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 10;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

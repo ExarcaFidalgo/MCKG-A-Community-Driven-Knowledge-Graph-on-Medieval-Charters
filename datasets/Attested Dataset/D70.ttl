@@ -1,0 +1,159 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D70P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D70Oc1b.
+
+:D70Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D70P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvarez";
+	:spouse :D70P154;
+	:residence :Oviedo_Portal.
+
+:D70P119 a crm:E21_Person ;
+    :givenName "Per" ;
+    :familyName "Anes".
+
+:D70P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D70Oc1 ;
+	:spouse :D70P103;
+	:residence :Oviedo_Portal .
+	
+:D70Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D70P194 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Ferrándiz" ;
+    :child :D70P307 ;
+	crm:P100_died_in :D70Death_1.
+	
+:D70Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D70.
+
+:D70P233 a crm:E21_Person ;
+    :givenName "Nicolás" ;
+    :familyName "Ferrándiz";
+	:position_held :D70Oc2.
+	
+:D70Oc2 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D70P234 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :nickname "Pero Sardina".
+
+:D70P270 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Garçía de Vega".
+
+:D70P307 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Gonçáliz" ;
+	:residence :Báscones;
+    :father :D70P194 ; 
+    :spouse :D70P621 .
+
+:D70P349 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Iohannes";
+	:occupation :D70Oc3.
+	
+:D70Oc3 a :Occupation;
+	crm:P1_is_identified_by "Pellitero".
+
+:D70P452 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Peláiz de Berzió".
+
+:D70P586 a crm:E21_Person ;
+    :givenName "Pedro" ;
+    :familyName "Pérez";
+	:occupation :D70Oc6.
+	
+:D70Oc6 a :Occupation;
+	crm:P1_is_identified_by "Palonbero".
+
+:D70P621 a crm:E21_Person ;
+    :givenName "Elvira" ;
+    :familyName "Rodríguiz";
+    :spouse :D70P307 .
+
+:D70P666 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Sánchiz".
+
+:D70P675 a crm:E21_Person ;
+    :givenName "Ruy" ;
+    :familyName "Seto".
+
+:D70P690 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Suárez";
+	:occupation :D70Oc4.
+	
+:D70Oc4 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+	
+:D70PB1 a crm:E21_Person ;
+    :givenName "Iohan" ;
+	:occupation :D70Oc5.
+	
+:D70Oc5 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:Entretaranos a crm:E53_Place ;
+    crm:P1_is_identified_by "Entretáranos" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+	
+:Báscones a crm:E53_Place ;
+    crm:P1_is_identified_by "Váscones" .
+
+:D70 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1342-12-27;
+  crm:P70i_is_documented_in :AMSPO1622;
+  crm:P23_transferred_title_from :D70P307,  :D70P621;
+  crm:P22_transferred_title_to :D70P154, :D70P103;
+  crm:P24_transferred_title_of :D70_Properties;
+  crm:P179_had_sales_price :D70payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D70P233;
+  crm:P14_carried_out_by :D70P690, :D70PB1, :D70P349, :D70P586 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1342-12-27 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1342-12-27"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1622  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1622" .
+    
+:D70_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Entretaranos.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D70payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 32;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

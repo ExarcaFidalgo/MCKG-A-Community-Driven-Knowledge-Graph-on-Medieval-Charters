@@ -1,0 +1,188 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D31P1b a crm:E21_Person ;
+    :givenName "Fernando" ;
+	:position_held :D31Oc1b.
+
+:D31Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D31P12 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Alfonso".
+
+:D31P64 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Alfonso" ;
+	:residence :Borondes;
+    :father :D31P737;
+    :mother :D31P216;
+    :sibling :D31P81;
+	:relative_cousin :D31P564.
+
+:D31P76 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Alfonso del Pienso".
+
+:D31P81 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Alfonso" ;
+    :sibling :D31P64.
+
+:D31P82 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Alfonso";
+	:occupation :D31Oc1;
+	:employer :D32PB1.
+	
+:D31Oc1 a :Occupation;
+	crm:P1_is_identified_by "Omne".
+	
+:D32PB1 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Alfonso";
+	:occupation :D31Oc2.
+	
+:D31Oc2 a :Occupation;
+	crm:P1_is_identified_by "Tendero".
+
+:D31P93 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Álvariz de Borondes".
+
+:D31P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D31P154;
+	:residence :Oviedo .
+
+:D31P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D31Oc3 ;
+	:residence :Oviedo ;
+    :spouse :D31P103 .
+	
+:D31Oc3 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D31P165 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz de Váscones".
+
+:D31P216 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Ferrándiz";
+	:child :D31P64;
+	crm:P100_died_in :D31Death_1.
+	
+:D31Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D31.
+
+:D31P313 a crm:E21_Person ;
+    :givenName "Menen" ;
+    :familyName "Gonçáliz de Berzió".
+
+:D31P376 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Martíniz";
+	:position_held :D31Oc4.
+	
+:D31Oc4 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D31P543 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez";
+	:occupation :D31Oc5.
+	
+:D31Oc5 a :Occupation;
+	crm:P1_is_identified_by "Escriván".
+
+:D31P551 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez de Borondes".
+
+:D31P564 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Pérez";
+	:relative_cousin :D31P64.
+	
+:D31PB1 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Pérez de Borondes de Iu".
+
+:D31P655 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Rodríguiz de Vaqueros".
+
+:D31P666 a crm:E21_Person ;
+    :givenName "Álvaro" ;
+    :familyName "Sánchez".
+
+:D31P667 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Sánchiz de Pantenno".
+
+:D31P689 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Suáriz de la Pobla".
+
+:D31P737 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Yánnez" ;
+	:child :D31P64;
+	crm:P100_died_in :D31Death_2.
+	
+:D31Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D31.
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+
+:Sienra a crm:E53_Place ;
+    crm:P1_is_identified_by "Sienra" .
+
+:Eres_ería a crm:E53_Place ;
+    crm:P1_is_identified_by "Ería d'Eros" .	
+	
+:D31 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1332-11-22;
+  crm:P70i_is_documented_in :AMSPO1589;
+  crm:P23_transferred_title_from :D31P64;
+  crm:P22_transferred_title_to :D31P154, :D31P103;
+  crm:P24_transferred_title_of :D31_Properties ;
+  crm:P179_had_sales_price :D31payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D31P376;
+  crm:P14_carried_out_by :D31P655, :D31P76, :D31P82, :D31P543; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1332-11-22 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1332-11-22"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+	
+:AMSPO1589 a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1589" .
+    
+:D31_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Eres_ería, :Sienra.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D31payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 36;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

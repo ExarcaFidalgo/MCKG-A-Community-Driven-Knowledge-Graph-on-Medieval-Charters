@@ -1,0 +1,116 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D122P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D122Oc1b.
+
+:D122Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D122P135 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Díaz".
+
+:D122P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Ferrándiz de Oviedo";
+	:occupation :D122Oc1.
+	
+:D122Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D122P246 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Ferrándiz de Castannedo";
+	:occupation :D122Oc2.
+	
+:D122Oc2 a :Occupation;
+	crm:P1_is_identified_by "Clérigo".
+
+:D122P266 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Garçía";
+	:position_held :D122Oc4.
+	
+:D122Oc4 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en la pobla de Grado";
+	:applies_to_jurisdiction :Grado.
+
+:D122P417 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Menéndiz" ;
+    :spouse :D122P660 .
+
+:D122P486 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Pérez de Berzió".
+
+:D122P526 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Pérez";
+	:occupation :D122Oc3.
+	
+:D122Oc3 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D122P660 a crm:E21_Person ;
+    :givenName "Sancha" ;
+    :familyName "Rodríguiz";
+	:spouse :D122P417;
+	:residence :Báscones.
+
+:D122P661 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Rodríguiz".
+	
+:D122PB1 a crm:E21_Person ;
+    :givenName "Diegálvariz".
+	
+:Maçabues a crm:E53_Place ;
+    crm:P1_is_identified_by "Maçabués" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Grado a crm:E53_Place ;
+    crm:P1_is_identified_by "Grado" .
+	
+:Báscones a crm:E53_Place;
+	crm:P1_is_identified_by "Uáscones".
+
+:D122 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1360-05-18;
+  crm:P70i_is_documented_in :AMSPO1690;
+  crm:P23_transferred_title_from :D122P660, :D122P417;
+  crm:P22_transferred_title_to :D122P154;
+  crm:P24_transferred_title_of :D122_Properties;
+  crm:P179_had_sales_price :D122payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D122P266;
+  crm:P14_carried_out_by :D122P486, :D122P246, :D122P526; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1360-05-18 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1360-05-18"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1690  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1690" .
+    
+:D122_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Maçabues.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D122payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 14;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .

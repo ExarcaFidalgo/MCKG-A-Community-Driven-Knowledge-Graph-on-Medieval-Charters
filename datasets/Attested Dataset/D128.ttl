@@ -1,0 +1,157 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+		
+:D128P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D128Oc1b.
+
+:D128Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D128P5 a crm:E21_Person ;
+    :givenName "Bartolomé" ;
+    :father :D128P154;
+    :mother :D128P103;
+	:sibling :D128P21, :D128P645.
+
+:D128P21 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Alffonso" ;
+	:occupation :D128Oc1;
+    :father :D128P154;
+    :mother :D128P103;
+	:sibling :D128P5, :D128P645;
+	:work_location :Oviedo.
+		
+:D128Oc1 a :Occupation;
+	crm:P1_is_identified_by "Monge del Monesterio de San Vicenti de Oviedo".
+	
+:D128P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvarez";
+	:child :D128P5, :D128P21, :D128P645;
+	crm:P100_died_in :D128Death_1.
+	
+:D128Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D128.
+
+:D128P114 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Álvarez de Fuegio";
+	:occupation :D128Oc1.
+
+:D128P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Fernández";
+	:child :D128P5, :D128P21, :D128P645;
+	:occupation :D128Oc2;
+	crm:P100_died_in :D128Death_2.
+	
+:D128Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D128.
+	
+:D128Oc2 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D128P233 a crm:E21_Person ;
+    :givenName "Nicolás" ;
+    :familyName "Fernández";
+	:position_held :D128Oc3.
+	
+:D128Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D128P239 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Fernández";
+	:occupation :D128Oc4;
+	:work_location :Oviedo.
+	
+:D128Oc4 a :Occupation;
+	crm:P1_is_identified_by "Portero del Monesterio de San Vicenti".
+
+:D128P286 a crm:E21_Person ;
+    :givenName "Roy" ;
+    :familyName "Garçía de Berzió";
+	:child :D128P612.
+
+:D128P330 a crm:E21_Person ;
+    :givenName "Martín" ;
+    :familyName "Gutiérrez" ;
+    :father :D128P334 ;
+    :mother :D128P612 ;
+	:residence :Grullés.
+
+:D128P334 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Gutiérrez";
+	:child :D128P330.
+
+:D128P588 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Pérez";
+	:father :D128P676.
+
+:D128P612 a crm:E21_Person ;
+    :givenName "Aldonça" ;
+    :familyName "Rodríguez" ;
+	:child :D128P330;
+    :father :D128P286 .
+
+:D128P645 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Rodríguez" ;
+    :father :D128P154;
+    :mother :D128P103;
+	:sibling :D128P5, :D128P21.
+
+:D128P676 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Sirgo de Vega";
+	:child :D128P588.
+
+:Borondes_Arriba a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes de Suso" .
+	
+:Grullés a crm:E53_Place ;
+    crm:P1_is_identified_by "Grullés" .
+	
+:Borondes_Abajo a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes de Iuso" .
+
+:D128 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1363-04-09;
+  crm:P70i_is_documented_in :AMSPO1697;
+  crm:P23_transferred_title_from :D128P330;
+  crm:P22_transferred_title_to :D128P21, :D128P645, :D128P5;
+  crm:P24_transferred_title_of :D128_Properties;
+  crm:P179_had_sales_price :D128payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D128P233;
+  crm:P14_carried_out_by :D128P114, :D128P588, :D128P239;  
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1363-04-09 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1363-04-09"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1697  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1697" .
+    
+:D128_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Borondes_Arriba, :Borondes_Abajo.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D128payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 16;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .

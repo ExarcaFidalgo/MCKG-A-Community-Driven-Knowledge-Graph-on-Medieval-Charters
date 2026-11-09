@@ -1,0 +1,219 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D74P1 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D74Oc1b.
+
+:D74Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D74P17 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Alfonso de Trassantisso".
+
+:D74P83 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Alffonso";
+	crm:P100_died_in :D74Death_1.
+	
+:D74Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D74_1.
+
+:D74P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D74P154;
+	:residence :Oviedo .
+
+:D74P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D74Oc1 ;
+	:spouse :D74P103;
+	:residence :Oviedo .
+	
+:D74Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D74P223 a crm:E21_Person ;
+    :givenName "Mayor" ;
+    :familyName "Ferrándiz";
+	:child :D74P224, :D74P563.
+
+:D74P224 a crm:E21_Person ;
+    :givenName "Mayor" ;
+    :familyName "Ferrándiz";
+	:father :D74P538;
+	:mother :D74P223;
+	:relative_grandfather :D74P394;
+	:relative_grandmother :D74P455;
+	crm:P100_died_in :D74Death_2.
+	
+:D74Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D74_1.
+
+:D74P394 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Martíniz";
+	:spouse :D74P455;
+	:relative_grandchild :D74P224, :D74P563.
+
+:D74P451 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Peláiz";
+	:residence :Pravia.
+
+:D74P455 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Peláiz";
+	:spouse :D74P394;
+	:relative_grandchild :D74P224, :D74P563.
+	
+:D74P376 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Martíniz";
+	:position_held :D74Oc4.
+	
+:D74Oc4 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D74P525 a crm:E21_Person ;
+    :givenName "García" ;
+    :familyName "Pérez".
+
+:D74P531 a crm:E21_Person ;
+    :givenName "Giral" ;
+    :familyName "Pérez";
+	:occupation :D74Oc2.
+	
+:D74Oc2 a :Occupation;
+	crm:P1_is_identified_by "Notario".
+
+:D74P536 a crm:E21_Person ;
+    :givenName "Ignés" ;
+    :familyName "Pérez";
+	crm:P100_died_in :D74Death_3.
+	
+:D74Death_3 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D74_1.
+
+:D74P538 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez" ;
+    :child :D74P563, :D74P224 ;
+	crm:P100_died_in :D74Death_4.
+	
+:D74Death_4 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D74_1.
+
+:D74P563 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Pérez de Borondes";
+	:father :D74P538;
+	:mother :D74P223;
+	:relative_grandfather :D74P394;
+	:relative_grandmother :D74P455.
+
+:D74P617 a crm:E21_Person ;
+    :givenName "Álvaro" ;
+    :familyName "Rodríguez".
+
+:D74P690 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Suáriz";
+	:occupation :D74Oc3.
+	
+:D74PB1 a crm:E21_Person;
+	:givenName "Pero";
+	:familyName "Suariz";
+	:father :D74PB2.
+	
+:D74PB2 a crm:E21_Person;
+	:givenName "Suer";
+	:familyName "Rodríguiz de Borondes";
+	:child :D74PB1.
+	
+:D74G2 a crm:E74_Group ;
+	crm:P1_is_identified_by "Fillos de Suer Alfonso e de Ignés Pérez".
+	
+:D74Oc3 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D74P730 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Suáriz de Castiello".
+
+:La_Vega a crm:E53_Place ;
+    crm:P1_is_identified_by "La Vega" .
+	
+:Pravia a crm:E53_Place ;
+    crm:P1_is_identified_by "Pravia" .
+	
+:Los_Barqueros a crm:E53_Place ;
+    crm:P1_is_identified_by "Los Barqueros" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Vega_de_Rodrigo_Abril a crm:E53_Place ;
+    crm:P1_is_identified_by "Vega de Rodrigo Abril".
+
+:D74_1 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1343-09-20;
+  crm:P70i_is_documented_in :AMSPO1632;
+  crm:P23_transferred_title_from :D74PB1;
+  crm:P22_transferred_title_to :D74P154, :D74P103, :D74G2;
+  crm:P24_transferred_title_of :D74_1Properties;
+  crm:P179_had_sales_price :D74_1payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D74P376;
+  crm:P14_carried_out_by :D74P531, :D74P17, :D74P730, :D74P451, :D74P690 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:D74_2 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1343-09-20;
+  crm:P70i_is_documented_in :AMSPO1632;
+  crm:P23_transferred_title_from :D74PB1;
+  crm:P22_transferred_title_to :D74P154, :D74P103;
+  crm:P24_transferred_title_of :D74_2Properties;
+  crm:P179_had_sales_price :D74_2payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D74P376;
+  crm:P14_carried_out_by :D74P531, :D74P17, :D74P730, :D74P451, :D74P690 ; 
+  crm:P14.1_in_the_role_of :Witness. 
+  
+:Within_1343-09-20 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1343-09-20"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1632  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1632" .
+    
+:D74_1Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :La_Vega, :Vega_de_Rodrigo_Abril.
+	
+:D74_2Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Los_Barqueros.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D74_1payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 25;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+  
+:D74_2payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 30;
+	crm:P180_has_currency :Dineros.
+	
+:Dineros a crm:E98_Currency ;
+  crm:P1_is_identified_by "Dineros" .

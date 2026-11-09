@@ -1,0 +1,156 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D37P1b a crm:E21_Person ;
+    :givenName "Fernando" ;
+	:position_held :D37Oc1b.
+
+:D37Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D37P80 a crm:E21_Person ;
+    :givenName "Sancha" ;
+    :familyName "Alffonsso" ;
+	:residence :Felgueras;
+    :father :D37P444;
+    :mother :D37PB1;
+	:relative_grandfather :D37P625;
+	:relative_grandmother :D37P92.
+
+:D37P92 a crm:E21_Person ;
+    :givenName "Cezilla" ;
+    :familyName "Álvariz";
+	:relative_grandchild :D37P80.
+
+:D37P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D37P154.
+
+:D37P106 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+    :sibling :D37P116 .
+
+:D37P116 a crm:E21_Person ;
+    :givenName "Rodrigo" ;
+    :familyName "Álvariz" ;
+    :sibling :D37P106 .
+
+:D37P117 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Andreo";
+	:position_held :D37Oc1.
+	
+:D37Oc1 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D37P150 a crm:E21_Person ;
+    :givenName "Rodrigo" ;
+    :familyName "Estévanez del Canpo".
+
+:D37P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D37Oc2 ;
+	:residence :Oviedo_Portal ;
+    :spouse :D37P103 .
+	
+:D37Oc2 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+	
+:D37PB1 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Garçía";
+    :child :D37P80 .
+
+:D37P281 a crm:E21_Person ;
+    :givenName "Mayor" ;
+    :familyName "Garçía".
+
+:D37P285 a crm:E21_Person ;
+    :givenName "Ruy" ;
+    :familyName "Garçía".
+
+:D37P444 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Peláiz";
+	:occupation :D37Oc3;
+    :child :D37P80 .
+	
+:D37Oc3 a :Occupation;
+	crm:P1_is_identified_by "Cavallero".
+
+:D37P509 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Pérez";
+	:father :D37PB3.
+
+:D37P593 a crm:E21_Person ;
+    :givenName "Ruy" ;
+    :familyName "Pérez";
+	:father :D37PB2.
+	
+:D37PB2 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Martíniz de San Iohan";
+    :child :D37P593 .
+	
+:D37PB3 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Iohánnez de La Vega";
+    :child :D37P509 .
+
+:D37P625 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Rodríguiz";
+	:relative_grandchild :D37P80.
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+
+:Felgueras a crm:E53_Place ;
+    crm:P1_is_identified_by "Felgueras" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+	
+:D37 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1333-04-11;
+  crm:P70i_is_documented_in :AMSPO1592;
+  crm:P23_transferred_title_from :D37P80;
+  crm:P22_transferred_title_to :D37P154, :D37P103;
+  crm:P24_transferred_title_of :D37_Properties;
+  crm:P179_had_sales_price :D37payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D37P117;
+  crm:P14_carried_out_by :D37P593, :D37P150 ,:D37P509; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1333-04-11 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1333-04-11"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+	
+:AMSPO1592 a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1592" .
+    
+:D37_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Borondes.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D37payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 30;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

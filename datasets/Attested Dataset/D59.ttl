@@ -1,0 +1,186 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D59P1 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D59Oc1b.
+
+:D59Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D59P46 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Alffonso Murçia";
+	:occupation :D59Oc1.
+	
+:D59Oc1 a :Occupation;
+	crm:P1_is_identified_by "Mercador".
+
+:D59P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D59P154.
+
+:D59P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Fernándiz";
+	:occupation :D59Oc2 ;
+	:spouse :D59P103;
+	:residence :Oviedo_Portal .
+	
+:D59Oc2 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D59P201 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Fernándiz";
+	:position_held :D59Oc3.
+	
+:D59Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Notario público del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D59P223 a crm:E21_Person ;
+    :givenName "Mayor" ;
+    :familyName "Fernándíz";
+	:residence :Borondes_Arriba;
+	:child :D59P563, :D59P224 ;
+	crm:P100_died_in :D59Death_1.
+	
+:D59Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D59.
+
+:D59P224 a crm:E21_Person ;
+    :givenName "Mayor" ;
+    :familyName "Fernández";
+    :sibling :D59P563;
+    :father :D59P538;
+	:mother :D59P223;
+    :residence :Borondes.
+
+:D59P233 a crm:E21_Person ;
+    :givenName "Nicolao" ;
+    :familyName "Fernándiz";
+	:occupation :D59Oc4.
+	
+:D59Oc4 a :Occupation;
+	crm:P1_is_identified_by "Notario".
+
+:D59P312 a crm:E21_Person ;
+    :givenName "Martin" ;
+    :familyName "Gonçáliz";
+	:sibling :D59P322.
+
+:D59P322 a crm:E21_Person ;
+    :givenName "Gutier" ;
+    :familyName "Gómez de Vega";
+	:sibling :D59P312.
+
+:D59P444 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Peláiz".
+
+:D59P513 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Pérez";
+	:occupation :D59Oc5.
+	
+:D59Oc5 a :Occupation;
+	crm:P1_is_identified_by "Mercador".
+
+:D59P522 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Pérez".
+
+:D59P538 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez" ;
+    :child :D59P563, :D59P224 ;
+	:residence :Borondes_Arriba ;
+	crm:P100_died_in :D59Death_2.
+	
+:D59Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D59.
+
+:D59P563 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Pérez";
+    :sibling :D59P224;
+    :father :D59P538;
+	:mother :D59P223;
+    :residence :Borondes.
+
+:D59P601 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Pérez de Váscones".
+
+:D59PB1 a crm:E21_Person ;
+    :givenName "Requexo" .
+
+:D59P661 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Rodríguiz de Borondes".
+
+:D59P729 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Suáriz" .
+
+:D59P728 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Suáriz de y de Borondes" .	
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+
+:Eres_ería a crm:E53_Place ;
+    crm:P1_is_identified_by "Hería d'Eres" .
+
+:Sienra_ería a crm:E53_Place ;
+    crm:P1_is_identified_by "Ería de la Sienrra" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+	
+:Borondes_Arriba a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes de Suso" .
+
+:D59 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1340-07-17;
+  crm:P70i_is_documented_in :AMSPO1580;
+  crm:P23_transferred_title_from :D59P563, :D59P224;
+  crm:P22_transferred_title_to :D59P154, :D59P103;
+  crm:P24_transferred_title_of  :D59_Properties;
+  crm:P179_had_sales_price :D59payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D59P201;
+  crm:P14_carried_out_by :D59P728, :D59P233, :D59P46, :D59P513, :D59P322, :D59P312; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1340-07-17 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1340-07-17"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1580  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1580" .
+    
+:D59_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Sienra_ería, :Eres_ería.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D59payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 40;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+
+

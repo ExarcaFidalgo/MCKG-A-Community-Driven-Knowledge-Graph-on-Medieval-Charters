@@ -1,0 +1,141 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D85P96 a crm:E21_Person ;
+    :givenName "Gutier" ;
+    :familyName "Áluariz de Petenno".
+
+:D85P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D85P154;
+	crm:P100_died_in :D85Death_1.
+	
+:D85Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D85.
+
+:D85P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Ferrándiz de Oviedo";
+	:occupation :D85Oc1 ;
+	:spouse :D85P103.
+	
+:D85Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D85P155 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Ferrándiz".
+
+:D85P364 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Lana";
+	:position_held :D85Oc2.
+	
+:D85Oc2 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey enna pobla de Grado";
+	:applies_to_jurisdiction :Grado.
+
+:D85P433 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Nicolás";
+	:occupation :D85Oc3.
+	
+:D85Oc3 a :Occupation;
+	crm:P1_is_identified_by "Carniçero".
+
+:D85P437 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Nieto".
+
+:D85P445 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Peláiz".
+
+:D85P628 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Rodríguiz";
+	:father :D85PB1.
+	
+:D85PB1 a crm:E21_Person ;
+    :givenName "Ruy" ;
+    :familyName "Garçía";
+	:child :D85P628.
+
+:D85P661 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Rodríguiz de Borondes".
+
+:D85P688 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Suáriz";
+	:occupation :D85Oc4.
+	
+:D85Oc4 a :Occupation;
+	crm:P1_is_identified_by "Alfayate".
+
+:D85P724 a crm:E21_Person ;
+    :givenName "Menén" ;
+    :familyName "Suáriz".
+
+:D85P725 a crm:E21_Person ;
+    :givenName "Menén" ;
+    :familyName "Suáriz";
+	:occupation :D85Oc5.
+	
+:D85Oc5 a :Occupation;
+	crm:P1_is_identified_by "Alfayate".
+	
+:Borondes_Arriba a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes de Suso" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+	
+:Grado a crm:E53_Place ;
+    crm:P1_is_identified_by "Grado" .
+
+:D85 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1346-09-08;
+  crm:P70i_is_documented_in :AMSPO1644;
+  crm:P23_transferred_title_from :D85P96;
+  crm:P22_transferred_title_to :D85P154, :D85G1;
+  crm:P24_transferred_title_of :D85_Properties;
+  crm:P179_had_sales_price :D85payment_1, :D85payment_2;
+  crm:P14_carried_out_byPQ14.1-Notary :D85P364;
+  crm:P14_carried_out_by :D85P628, :D85P437, :D85P433, :D85P688, :D85P725 ;   
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1346-09-08 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1346-09-08"^^xsd:date.
+  
+:D85G1 a crm:E74_Group ;
+    crm:P1_is_identified_by "Hijos de Alfonso Fernández y María Álvarez" . 
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1644  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1644" .
+    
+:D85_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Borondes_Arriba.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D85payment_1 a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 0.75;
+	crm:P180_has_currency :Yegua.
+	
+:Yegua a crm:E98_Currency ;
+  crm:P1_is_identified_by "Yegua" .
+  
+:D85payment_2 a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 1;
+	crm:P180_has_currency :Potro.
+	
+:Potro a crm:E98_Currency ;
+  crm:P1_is_identified_by "Potro" .

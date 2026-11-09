@@ -1,0 +1,137 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D47P1b a crm:E21_Person ;
+    :givenName "Fernando" ;
+	:position_held :D47Oc1b.
+
+:D47Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D47P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D47P154.
+
+:D47P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D47Oc1 ;
+	:residence :Oviedo ;
+    :spouse :D47P103 .
+	
+:D47Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D47P163 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Ferrándiz" ;
+    :father :D47P236. 
+
+:D47P236 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Ferrándiz";
+    :child :D47P163 ;
+	:occupation :D47Oc2.
+	
+:D47Oc2 a :Occupation;
+	crm:P1_is_identified_by "Canónigo".
+
+:D47P240 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Ferrándiz";
+	:occupation :D47Oc3.
+	
+:D47Oc3 a :Occupation;
+	crm:P1_is_identified_by "Carniçero".
+
+:D47P318 a crm:E21_Person ;
+    :givenName "Ruy" ;
+    :familyName "Gonçáliz";
+	:occupation :D47Oc4.
+	
+:D47Oc4 a :Occupation;
+	crm:P1_is_identified_by "Notario".
+
+:D47P419 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Menéndiz" ;
+	:residence :Borondes;
+    :mother :D47P714;
+	:father :D47P723.
+	
+:D47P723 a crm:E21_Person ;
+    :givenName "Menen" ;
+    :familyName "Suáriz";
+	:child :D47P419;
+	crm:P100_died_in :D47Death_1.
+	
+:D47Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D47.
+
+:D47P522 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Pérez de Borondes".
+
+:D47P523 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Pérez";
+	:position_held :D47Oc5.
+	
+:D47Oc5 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey enna pobla de Grado";
+	:applies_to_jurisdiction :Grado.
+
+:D47P714 a crm:E21_Person ;
+    :givenName "Loriença" ;
+    :familyName "Suáriz";
+	:residence :Borondes;
+    :child :D47P419 .
+	
+:Arrotiellas a crm:E53_Place ;
+    crm:P1_is_identified_by "Arrotellas" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+	
+:Grado a crm:E53_Place ;
+    crm:P1_is_identified_by "Grado" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+	
+:D47 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1334-12-08;
+  crm:P70i_is_documented_in :AMSPO1601;
+  crm:P23_transferred_title_from :D47P714, :D47P419;
+  crm:P22_transferred_title_to :D47P154, :D47P103 ;
+  crm:P24_transferred_title_of :D47_Properties;
+  crm:P179_had_sales_price :D47payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D47P523;
+  crm:P14_carried_out_by :D47P240, :D47P318, :D47P163, :D47P522; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1334-12-08 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1334-12-08"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1601  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1601" .
+    
+:D47_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Arrotiellas.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D47payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 12;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

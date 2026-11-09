@@ -1,0 +1,141 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D27P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D27P154;
+	:residence :Oviedo_Portal .
+
+:D27P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D27Oc1 ;
+	:residence :Oviedo_Portal ;
+    :spouse :D27P103 .
+	
+:D27Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+	
+:D27PB1 a crm:E21_Person ;
+    :givenName "Mayor" ;
+    :familyName "Ferrándiz";
+	:residence :Borondes;
+	:spouse :D27P584.
+
+:D27P278 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Garçía de Berzió".
+
+:D27P343 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Iohan".
+	
+:D27PB2 a crm:E21_Person ;
+    :givenName "Pero" .
+
+:D27P362 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Iohánniz" ;
+    :child :D27P584 ;
+	:spouse :D27P560;
+	crm:P100_died_in :D27Death_1.
+	
+:D27Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D27.
+
+:D27P375 a crm:E21_Person ;
+    :givenName "Andreo" ;
+    :familyName "Martíniz";
+	:occupation :D27Oc2.
+	
+:D27Oc2 a :Occupation;
+	crm:P1_is_identified_by "Notario".
+
+:D27P387 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Martíniz";
+	:occupation :D27Oc3.
+	
+:D27Oc3 a :Occupation;
+	crm:P1_is_identified_by "Notario".
+	
+:D27PB3 a crm:E21_Person ;
+    :familyName "Peláiz del Portal".
+
+:D27P430 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Nicolás";
+	:position_held :D27Oc4.
+	
+:D27Oc4 a :PublicOffice;
+	crm:P1_is_identified_by "Notario público del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D27P560 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Pérez";
+    :spouse :D27P362 . 
+
+:D27P584 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Pérez" ;
+	:residence :Borondes;
+    :father :D27P362;
+    :spouse :D27PB1 . 
+
+:D27P585 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Pérez";
+	:occupation :D27Oc5.
+	
+:D27Oc5 a :Occupation;
+	crm:P1_is_identified_by "Ferrero".
+
+:El_Palledal a crm:E53_Place ;
+    crm:P1_is_identified_by "El Palledal" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+	
+:D27 a crm:E96_Purchase;
+  crm:P2_has_type :Sale ;
+  crm:P4_has_time-span :Within_1331-01-10;
+  crm:P70i_is_documented_in :AMSPO1583;
+  crm:P23_transferred_title_from :D27P584, :D27PB1;
+  crm:P22_transferred_title_to :D27P154, :D27P103;
+  crm:P24_transferred_title_of :D27_Properties;
+  crm:P179_had_sales_price :D27payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D27P430;
+  crm:P14_carried_out_by :D27P375, :D27P387, :D27PB3, :D27P585; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1331-01-10 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1331-01-10"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+	
+:AMSPO1583 a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1583" .
+    
+:D27_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :El_Palledal.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D27payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 8;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

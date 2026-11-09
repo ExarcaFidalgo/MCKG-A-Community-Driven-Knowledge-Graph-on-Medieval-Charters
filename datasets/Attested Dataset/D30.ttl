@@ -1,0 +1,147 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D30P1b a crm:E21_Person ;
+    :givenName "Fernando" ;
+	:position_held :D30Oc1b.
+
+:D30Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D30P36 a crm:E21_Person ;
+    :givenName "Gutier" ;
+    :familyName "Alfonso";
+	:occupation :D30Oc1.
+	
+:D30Oc1 a :Occupation;
+	crm:P1_is_identified_by "Carniçero".
+
+:D30P64 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Alfonso" ;
+	:residence :Borondes;
+    :father :D30P737;
+    :mother :D30P216.
+
+:D30P81 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Alfonso" ;
+	:residence :Borondes;
+    :father :D30P737;
+    :mother :D30P216.
+
+:D30P103 a crm:E21_Person ;
+    :givenName "Marýa" ;
+    :familyName "Álvariz";
+	:spouse :D30P154;
+	:residence :Oviedo_Portal .
+
+:D30P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Fernándiz";
+	:occupation :D30Oc2 ;
+	:spouse :D30P103;
+	:residence :Oviedo_Portal .
+	
+:D30Oc2 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D30P216 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Fernándiz";
+    :child :D30P64, :D30P81 ;
+	crm:P100_died_in :D30Death_1.
+	
+:D30Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D30.
+
+:D30P376 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Martíniz";
+	:position_held :D30Oc3.
+	
+:D30Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D30P394 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Martíniz".
+
+:D30P543 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez";
+	:occupation :D30Oc4.
+	
+:D30Oc4 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D30P587 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Pérez";
+	:nickname "Pero Avogado".
+
+:D30P632 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Rodríguiz";
+	:occupation :D30Oc5.
+	
+:D30Oc5 a :Occupation;
+	crm:P1_is_identified_by "Portero que foe del Obispo".
+
+:D30P737 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Yánnez" ;
+    :child :D30P64, :D30P81 ;
+	crm:P100_died_in :D30Death_2.
+	
+:D30Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D30.
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+
+:Eres_ería a crm:E53_Place ;
+    crm:P1_is_identified_by "Hería de Eros" .
+	
+:D30 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1332-11-10;
+  crm:P70i_is_documented_in :AMSPO1585;
+  crm:P23_transferred_title_from :D30P64, :D30P81;
+  crm:P22_transferred_title_to :D30P154, :D30P103;
+  crm:P24_transferred_title_of :D30_Properties;
+  crm:P179_had_sales_price :D30payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D30P376;
+  crm:P14_carried_out_by :D30P632, :D30P36, :D30P587, :D30P543; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1332-11-10 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1332-11-10"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+	
+:AMSPO1585 a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1585" .
+    
+:D30_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Eres_ería.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D30payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 12;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

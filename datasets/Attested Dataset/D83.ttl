@@ -1,0 +1,121 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D83P1 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D83Oc1b.
+
+:D83Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D83P62 a crm:E21_Person ;
+    :givenName "Menén" ;
+    :familyName "Alffonso";
+	:father :D83P428.
+
+:D83P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvarez";
+	:spouse :D83P154;
+	:residence :Oviedo .
+
+:D83P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D83Oc1 ;
+	:spouse :D83P103;
+	:residence :Oviedo .
+	
+:D83Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D83P272 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Garçía de Villandax".
+
+:D83P276 a crm:E21_Person ;
+    :givenName "Ygnés" ;
+    :familyName "Garçía".
+
+:D83P428 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Nicolás";
+	:residence :Vega_de_María_Mansa;
+	:child :D83P62.
+
+:D83P445 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Peláiz".
+	
+:D83P378 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Martiniz";
+	:position_held :D83Oc2.
+	
+:D83Oc2 a :PublicOffice;
+	crm:P1_is_identified_by "Notario público del rey enna pobla de Grado";
+	:applies_to_jurisdiction :Grado.
+
+:D83P614 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Rodríguiz de Premonno".
+
+:D83P661 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Rodríguiz de Borondes".
+
+:D83P728 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Suáriz de Borondes".
+
+:La_Endriga a crm:E53_Place ;
+    crm:P1_is_identified_by "La Endriga" .
+
+:La_Muela a crm:E53_Place ;
+    crm:P1_is_identified_by "La Muela" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Vega_de_María_Mansa a crm:E53_Place ;
+    crm:P1_is_identified_by "Veyga de María Mansa" .
+	
+:Grado a crm:E53_Place ;
+    crm:P1_is_identified_by "Grado" .
+
+:D83 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1345-04-09;
+  crm:P70i_is_documented_in :AMSPO1642;
+  crm:P23_transferred_title_from :D83P428, :D83P62;
+  crm:P22_transferred_title_to :D83P154, :D83P103;
+  crm:P24_transferred_title_of :D83_Properties;
+  crm:P179_had_sales_price :D83payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D83P378;
+  crm:P14_carried_out_by :D83P728, :D83P614, :D83P272 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1345-04-09 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1345-04-09"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1642  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1642" .
+    
+:D83_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :La_Endriga, :La_Muela.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D83payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 12;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

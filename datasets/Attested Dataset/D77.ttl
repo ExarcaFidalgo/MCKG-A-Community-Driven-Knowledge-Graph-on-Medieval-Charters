@@ -1,0 +1,169 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D77P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D77Oc1b.
+
+:D77Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D77P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D77P154;
+	:residence :Oviedo_Portal .
+	
+:D77PB1 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Álvariz de y de Borondes".
+
+:D77P112 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Álvariz de Vega".
+
+:D77P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D77Oc1 ;
+	:spouse :D77P103;
+	:residence :Oviedo_Portal .
+	
+:D77Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D77P223 a crm:E21_Person ;
+    :givenName "Mayor" ;
+    :familyName "Ferrándiz";
+	:child :D77P224 .
+
+:D77P224 a crm:E21_Person ;
+    :givenName "Mayor" ;
+    :familyName "Ferrándiz" ;
+	:residence :Borondes ;
+	:mother :D77P223 ;
+	:father :D77P538 .
+
+:D77P243 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Ferrándiz";
+	:nickname "Pero de Vallo".
+
+:D77P437 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Nieto de la Pobla".
+
+:D77P445 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Peláiz de y de Borondes".
+
+:D77P522 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Pérez de y de Borondes".
+
+:D77P525 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Pérez".
+
+:D77P538 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez" ;
+    :child :D77P224;
+	crm:P100_died_in :D77Death_1.
+	
+:D77Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D77.
+
+:D77P544 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez";
+	:position_held :D77Oc2.	
+	
+:D77Oc2 a :PublicOffice;
+	crm:P1_is_identified_by "Notario público del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D77P592 a crm:E21_Person ;
+    :givenName "Roy" ;
+    :familyName "Pérez";
+	:occupation :D77Oc3.
+	
+:D77Oc3 a :Occupation;
+	crm:P1_is_identified_by "Mercador".
+	
+:D77PB2 a crm:E21_Person ;
+    :givenName "Roy" ;
+    :familyName "Pérez";
+	:father :D77P595.
+
+:D77P595 a crm:E21_Person ;
+    :givenName "Roy" ;
+    :familyName "Pérez del Rosal";
+	:child :D77PB2.
+
+:D77P609 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Prieto de Lena".
+
+:D77P635 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Rodríguiz de Berzió".
+
+:D77P728 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Suáriz de y de Borondes".
+
+:El_Cantero a crm:E53_Place ;
+    crm:P1_is_identified_by "El Cantero" .
+
+:El_Cono a crm:E53_Place ;
+    crm:P1_is_identified_by "El Cono" .
+
+:El_Nozedo a crm:E53_Place ;
+    crm:P1_is_identified_by "El Nozedo" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+
+:D77 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1343-12-14;
+  crm:P70i_is_documented_in :AMSPO1627;
+  crm:P23_transferred_title_from :D77P224;
+  crm:P22_transferred_title_to :D77P154, :D77P103;
+  crm:P24_transferred_title_of :D77_Properties;
+  crm:P179_had_sales_price :D77payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D77P544;
+  crm:P14_carried_out_by :D77P592, :D77P243, :D77PB2, :D77P522, :D77P609 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1343-12-14 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1343-12-14"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1627  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1627" .
+    
+:D77_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :El_Cantero, :El_Cono, :El_Nozedo.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D77payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 43;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

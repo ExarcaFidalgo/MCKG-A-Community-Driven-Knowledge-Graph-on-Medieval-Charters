@@ -1,0 +1,129 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D119P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D119Oc1b.
+
+:D119Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D119P9 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Alfonso de La Caridat".
+
+:D119P22 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Alfonso de Castannedo";
+	:occupation :D119Oc1.
+	
+:D119Oc1 a :Occupation;
+	crm:P1_is_identified_by "Clérigo".
+
+:D119P93 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Álvariz de Borondes";
+    :child :D119P144 ;
+	crm:P100_died_in :D119Death_1.
+	
+:D119Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D119.
+
+:D119P97 a crm:E21_Person ;
+    :givenName "Gutier" ;
+    :familyName "Álvariz".
+
+:D119P144 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Díaz" ;
+    :father :D119P93 ; 
+    :mother :D119P718 .
+
+:D119P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz de Oviedo";
+	:occupation :D119Oc2 .
+	
+:D119Oc2 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D119P266 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Garçía";
+	:position_held :D119Oc3.
+	
+:D119Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en la pobla de Grado";
+	:applies_to_jurisdiction :Grado.
+
+:D119P412 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Menén";
+	:occupation :D119Oc4.
+	
+:D119Oc4 a :Occupation;
+	crm:P1_is_identified_by "Carpintero".
+
+:D119P526 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Pérez";
+	:occupation :D119Oc5.
+	
+:D119Oc5 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D119P537 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez".
+
+:D119P718 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Suáriz" ;
+    :child :D119P144  ;
+	crm:P100_died_in :D119Death_2.
+	
+:D119Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D119.
+
+:Cavornioso a crm:E53_Place ;
+    crm:P1_is_identified_by "Cabornoso" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:D119 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1360-01-02;
+  crm:P70i_is_documented_in :AMSPO1687;
+  crm:P23_transferred_title_from :D119P144;
+  crm:P22_transferred_title_to :D119P154;
+  crm:P24_transferred_title_of :D119_Properties;
+  crm:P179_had_sales_price :D119payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D119P266;
+  crm:P14_carried_out_by :D119P22, :D119P9, :D119P412, :D119P526 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1360-01-02 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1360-01-02"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1687  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1687" .
+    
+:D119_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Cavornioso.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D119payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 16;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

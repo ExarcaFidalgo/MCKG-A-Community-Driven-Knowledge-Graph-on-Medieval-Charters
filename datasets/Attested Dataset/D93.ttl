@@ -1,0 +1,143 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D93P20 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Alffonso";
+	:employer :D93PB4;
+	:occupation :D93Oc1.
+	
+:D93Oc1 a :Occupation;
+	crm:P1_is_identified_by "Criado".
+	
+:D93PB4 a crm:E21_Person ;
+    :familyName "de la Rúa".
+
+:D93P73 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Alfonso";
+	:occupation :D93Oc2.
+	
+:D93Oc2 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D93P133 a crm:E21_Person ;
+    :givenName "Gutier" ;
+    :familyName "Díaz";
+	:father :D93PB1.
+
+:D93PB1 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Ferrándiz de Linares";
+	:child :D93P133.
+
+:D93P142 a crm:E21_Person ;
+    :givenName "Teresa" ;
+    :familyName "Díaz" ;
+    :child :D93P157 ;
+    :spouse :D93P268 .
+
+:D93P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D93Oc3 ;
+	:residence :Oviedo_Portal .
+	
+:D93Oc3 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D93P157 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Ferrándiz" ;
+	:residence :Fuejo;
+    :father :D93P268 ;
+    :mother :D93P142 .
+	
+:D93PB2 a crm:E21_Person ;
+    :givenName "Alffonso" .
+
+:D93P200 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Ferrándiz de Grado".
+	
+:D93PB3 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Díaz".
+
+:D93P268 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Garçía";
+	:child :D93P157;
+	:spouse :D93P142;
+	crm:P100_died_in :D93Death_1.
+	
+:D93Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D93.
+
+:D93P500 a crm:E21_Person ;
+    :givenName "Bartolomé" ;
+    :familyName "Pérez";
+	:position_held :D93Oc4.
+	
+:D93Oc4 a :PublicOffice;
+	crm:P1_is_identified_by "Notario público del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D93P505 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Pérez de Perediello".
+
+:D93P690 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Suáriz";
+	:occupation :D93Oc5.
+	
+:D93Oc5 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:Fuejo a crm:E53_Place ;
+    crm:P1_is_identified_by "Fueio" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+
+:Sienra_de_Perediella_ería a crm:E53_Place ;
+    crm:P1_is_identified_by "Sienra de Perediel" .
+
+:D93 a crm:E8_Acquisition;
+  crm:P2_has_type :Compensation;
+  crm:P4_has_time-span :Within_1348-05-29;
+  crm:P70i_is_documented_in :AMSPO1651;
+  crm:P23_transferred_title_from :D93P157;
+  crm:P22_transferred_title_to :D93P154;
+  crm:P24_transferred_title_of :D93_Properties;
+  crm:P14_carried_out_byPQ14.1-Notary :D93P500;
+  crm:P14_carried_out_by :D93P20, :D93P133, :D93P73, :D93P690; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1348-05-29 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1348-05-29"^^xsd:date.
+  
+:Compensation a crm:E55_Type;
+   crm:P1_is_identified_by "Compensation" .
+        
+:AMSPO1651  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1651" .
+    
+:D93_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Sienra_de_Perediella_ería.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D92payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 8;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

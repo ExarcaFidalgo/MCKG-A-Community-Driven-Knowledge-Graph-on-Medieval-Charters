@@ -1,0 +1,148 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D81P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D81Oc1b.
+
+:D81Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D81P86 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Alfonso de Vega".
+
+:D81P127 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Canno".
+
+:D81P138 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Díaz de la Puerta".
+
+:D81P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D81Oc1 ;
+	:residence :Oviedo .
+	
+:D81Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D81P163 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz" ;
+    :father :D81P240 .
+
+:D81P187 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Ferrándiz";
+	:father :D81PB1.
+	
+:D81PB1 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Pérez de Váscones";
+	:child :D81P187.
+
+:D81P240 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Ferrándiz";
+	:child :D81P163;
+	:occupation :D81Oc2.
+	
+:D81Oc2 a :Occupation;
+	crm:P1_is_identified_by "Carniçero".
+
+:D81P378 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Martíniz";
+	:position_held :D81Oc3.
+	
+:D81Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en la pobla de Grado";
+	:applies_to_jurisdiction :Grado.
+
+:D81P518 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Pérez de Vascones".
+
+:D81P525 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Pérez";
+	:residence :Borondes.
+
+:D81P633 a crm:E21_Person ;
+    :givenName "Gonzalo" ;
+    :familyName "Rodríguiz";
+	:occupation :D81Oc4.
+	
+:D81Oc4 a :Occupation;
+	crm:P1_is_identified_by "Notario".
+
+:D81P680 a crm:E21_Person ;
+    :givenName "Aldonça" ;
+    :familyName "Suáriz de Salma".
+
+:D81P688 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Suáriz";
+	:occupation :D81Oc5.
+	
+:D81Oc5 a :Occupation;
+	crm:P1_is_identified_by "Alfayate".
+
+:D81P728 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Suáriz de Borondes".
+	
+:El_Nozedo a crm:E53_Place ;
+    crm:P1_is_identified_by "El Nuzedo" .
+
+:Los_Barqueros a crm:E53_Place ;
+    crm:P1_is_identified_by "Los Barqueros" .
+	
+:Grado a crm:E53_Place ;
+    crm:P1_is_identified_by "Grado" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Ouiedo" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+
+:D81 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1344-08-03;
+  crm:P70i_is_documented_in :AMSPO1640;
+  crm:P23_transferred_title_from :D81P525;
+  crm:P22_transferred_title_to :D81P154;
+  crm:P24_transferred_title_of :D81_Properties;
+  crm:P179_had_sales_price :D81payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D81P378;
+  crm:P14_carried_out_by :D81P187, :D81P163, :D81P688, :D81P633 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1344-08-03 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1344-08-03"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1640  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1640" .
+    
+:D81_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :El_Nozedo, :Los_Barqueros.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D81payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 16;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

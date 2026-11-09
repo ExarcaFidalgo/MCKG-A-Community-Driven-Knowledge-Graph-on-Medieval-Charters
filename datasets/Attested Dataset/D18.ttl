@@ -1,0 +1,174 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D18P1b a crm:E21_Person ;
+    :givenName "Fernando" ;
+	:position_held :D18Oc1b.
+
+:D18Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D18P6 a crm:E21_Person ;
+    :givenName "Domingo" ;
+    :familyName "Alffonso de Labares".
+
+:D18P49 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Alffonso";
+	:occupation :D18Oc1, :D18Oc2;
+	:employer :D18PB2.
+	
+:D18Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+	
+:D18Oc2 a :Occupation;
+	crm:P1_is_identified_by "Criado" .
+	
+:D18PB2 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Rodríguez";
+	:occupation :D18Oc3.
+	
+:D18Oc3 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D18P78 a crm:E21_Person ;
+    :givenName "Rodrigo" ;
+    :familyName "Alffonso";
+	:father :D18PB1.
+	
+:D18PB1 a crm:E21_Person ;
+	:givenName "Alffonso";
+	:familyName "Sánchez";
+    :child :D18P78 ;
+	:occupation :D18Oc4.
+	
+:D18Oc4 a :Occupation;
+	crm:P1_is_identified_by "Alfayate".
+
+:D18P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvarez";
+	:spouse :D18P154;
+	:residence :Oviedo_Portal .
+
+:D18P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Fernández";
+	:occupation :D18Oc5 ;
+	:residence :Oviedo_Portal ;
+    :spouse :D18P103 .
+	
+:D18Oc5 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D18P430 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Nicolás";
+	:position_held :D18Oc6.
+	
+:D18Oc6 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+	
+:D18PB3 a crm:E21_Person ;
+    :givenName "Iohan" .
+
+:D18P446 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Peláez de Bateado".
+
+:D18P543 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez";
+	:occupation :D18Oc7.
+	
+:D18Oc7 a :Occupation;
+	crm:P1_is_identified_by "Escriván".
+
+:D18P600 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Pérez" ;
+    :child :D18P696 .
+
+:D18P610 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "del Quadro de Paderny".
+
+:D18P659 a crm:E21_Person ;
+    :givenName "Sancha" ;
+    :familyName "Rodríguez" ;
+    :spouse :D18P696 .
+
+:D18P696 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Suárez";
+	:father :D18P600;
+	:mother :D18P739;
+    :spouse :D18P659 ;
+	:residence :Feligresía_de_Santiago_de_Arlós.
+	
+:D18P739 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Yanes";
+    :child :D18P696 .
+	
+:Felgueras a crm:E53_Place ;
+    crm:P1_is_identified_by "Felgueres" .
+
+:Feligresía_de_Santiago_de_Arlós a crm:E53_Place ;
+    crm:P1_is_identified_by "Feligresía de Santiago de Arllós" .
+
+:Ferrones a crm:E53_Place ;
+    crm:P1_is_identified_by "Ferronnes" .
+
+:Ondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Ondes" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+
+:Piñera a crm:E53_Place ;
+    crm:P1_is_identified_by "Pinnera" .
+
+:Posada a crm:E53_Place ;
+    crm:P1_is_identified_by "Possada" .
+	
+:D18 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1329-06-08;
+  crm:P70i_is_documented_in :AMSPO1722;
+  crm:P23_transferred_title_from :D18P696, :D18P659;
+  crm:P22_transferred_title_to :D18P154, :D18P103;
+  crm:P24_transferred_title_of :D18_Properties;
+  crm:P179_had_sales_price :D18payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D18P430;
+  crm:P14_carried_out_by :D18P446, :D18P543, :D18P610, :D18P6, :D18P78, :D18P49; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1329-06-08 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1329-06-08"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+  
+:D18_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Piñera, :Felgueras, :Ondes, :Ferrones, :Posada.
+	
+:AMSPO1722 a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1722" .
+  
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D18payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 12;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

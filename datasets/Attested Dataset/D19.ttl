@@ -1,0 +1,138 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D19P1b a crm:E21_Person ;
+    :givenName "Fernando" ;
+	:position_held :D19Oc1b.
+
+:D19Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D19P15 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Alffonso Chirildos".
+
+:D19P35 a crm:E21_Person ;
+    :givenName "Gutier" ;
+    :familyName "Alffonso" ;
+    :child :D19P328 ;
+	crm:P100_died_in :D19Death_1.
+	
+:D19Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D19.
+
+:D19P48 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Alffonso";
+	:occupation :D19Oc1.
+	
+:D19Oc1 a :Occupation;
+	crm:P1_is_identified_by "Escriván".
+
+:D19P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D19P154;
+	:residence :Oviedo .
+
+:D19P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Fernándiz";
+	:occupation :D19Oc2 ;
+	:residence :Oviedo ;
+    :spouse :D19P103 .
+	
+:D19Oc2 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D19P328 a crm:E21_Person ;
+    :givenName "Elvira" ;
+    :familyName "Gutiérriz" ;
+	:residence :Anduerga;
+    :father :D19P35; 
+    :mother :D19P721. 
+
+:D19P430 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Nicolás";
+	:position_held :D19Oc3.
+	
+:D19Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Notario público del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D19P543 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez";
+	:occupation :D19Oc4.
+	
+:D19Oc4 a :Occupation;
+	crm:P1_is_identified_by "Escriván".
+
+:D19P646 a crm:E21_Person ;
+    :givenName "Matíos" ;
+    :familyName "Rodríguiz";
+	:occupation :D19Oc5.
+	
+:D19Oc5 a :Occupation;
+	crm:P1_is_identified_by "Alfayate".
+
+:D19P721 a crm:E21_Person ;
+    :givenName "Marinna" ;
+    :familyName "Suáriz";
+    :child :D19P328 ;
+	crm:P100_died_in :D19Death_2.
+	
+:D19Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D19.
+
+:D19PB1 a crm:E21_Person ;
+    :givenName "Rodrigo" .
+	
+:Anduerga a crm:E53_Place ;
+    crm:P1_is_identified_by "Anduergua" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Vallongo a crm:E53_Place ;
+    crm:P1_is_identified_by "Valongo" .
+	
+:D19 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1329-06-18;
+  crm:P70i_is_documented_in :AMSPO1572;
+  crm:P23_transferred_title_from :D19P328;
+  crm:P22_transferred_title_to :D19P154 , :D19P103 ;
+  crm:P24_transferred_title_of :D19_Properties;
+  crm:P179_had_sales_price :D19payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D19P430;
+  crm:P14_carried_out_by :D19P543, :D19P48, :D19P646, :D19P15; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1329-06-18 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1329-06-18"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+  
+:D19_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Borondes, :Vallongo.
+	
+:AMSPO1572 a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1572" .
+  
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D19payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 10;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

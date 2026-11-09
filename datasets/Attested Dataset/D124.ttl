@@ -1,0 +1,134 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+		
+:D124P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D124Oc1b.
+
+:D124Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D124P4 a crm:E21_Person ;
+    :givenName "Aluar" ;
+    :familyName "Alfonso" ;
+    :child :D124P102 ;
+	crm:P100_died_in :D124Death_1.
+	
+:D124Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D124.
+
+:D124P66 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Alfonso";
+	:child :D124P75.
+
+:D124P75 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Alfonso de Borondes" ;
+    :father :D124P66 .
+
+:D124P102 a crm:E21_Person ;
+    :givenName "Loys" ;
+    :familyName "Álvariz" ;
+    :father :D124P4 ;
+    :mother :D124P699 ;
+	:occupation :D124Oc1.
+	
+:D124Oc1 a :Occupation;
+	crm:P1_is_identified_by "Clérigo".
+
+:D124P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D124Oc2;
+	:residence :Oviedo.
+	
+:D124Oc2 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D124P166 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz de Çepedal".
+
+:D124P266 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Garçía";
+	:position_held :D124Oc3.
+	
+:D124Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en la pobla de Grado";
+	:applies_to_jurisdiction :Grado.
+
+:D124P415 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Menéndiz de Berçió".
+
+:D124P535 a crm:E21_Person ;
+    :givenName "Gutier" ;
+    :familyName "Pérez de Vallongo".
+	
+:D124PB1 a crm:E21_Person ;
+    :givenName "Suero" ;
+	:father :D124P685.
+
+:D124P685 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Suáriz";
+	:child :D124PB1.
+
+:D124P699 a crm:E21_Person ;
+    :givenName "Elvira" ;
+    :familyName "Suáriz";
+	:child :D124P102 ;
+	crm:P100_died_in :D124Death_2.
+	
+:D124Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D124.
+
+:Las_Vallinas a crm:E53_Place ;
+    crm:P1_is_identified_by "La Vallina" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Traspiñera_ería a crm:E53_Place ;
+    crm:P1_is_identified_by "Hería de Traspinnera" .
+
+:Grado a crm:E53_Place ;
+    crm:P1_is_identified_by "Grado" .
+
+:D124 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1361-11-30;
+  crm:P70i_is_documented_in :AMSPO1691;
+  crm:P23_transferred_title_from :D124P102;
+  crm:P22_transferred_title_to :D124P154;
+  crm:P24_transferred_title_of :D124_Properties;
+  crm:P179_had_sales_price :D124payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D124P266;
+  crm:P14_carried_out_by :D124P75, :D124P535, :D124PB1; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1361-11-30 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1361-11-30"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1691  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1691" .
+    
+:D124_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Traspiñera_ería, :Las_Vallinas.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D124payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 35;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .

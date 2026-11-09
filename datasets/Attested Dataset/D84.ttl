@@ -1,0 +1,150 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D84P1 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D84Oc1b.
+
+:D84Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D84P19 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Alfonso";
+	:relative_grandfather :D84P463.
+
+:D84P58 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Alffonso" ;
+    :child :D84P90, :D84P105, :D84P113;
+	:residence :Oviedo;
+	:spouse :D84P494;
+	:nickname "María de Soto".
+
+:D84P90 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Álvariz";
+	:father :D84P494;
+	:mother :D84P58.
+
+:D84P105 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:father :D84P494;
+	:mother :D84P58.
+
+:D84P113 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Álauriz";
+	:father :D84P494;
+	:mother :D84P58.
+
+:D84P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D84Oc1 .
+	
+:D84Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D84P376 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Martíniz";
+	:position_held :D84Oc2.
+	
+:D84Oc2 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D84P377 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Martíniz";
+	:occupation :D84Oc3.
+	
+:D84Oc3 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D84P380 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Martíniz";
+	:occupation :D84Oc4.
+	
+:D84Oc4 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D84P436 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Nicolás";
+	:occupation :D84Oc5.
+	
+:D84Oc5 a :Occupation;
+	crm:P1_is_identified_by "Carniçero".
+
+:D84P463 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Pérez";
+	:relative_grandchild :D84P19;
+	:occupation :D84Oc6.
+	
+:D84Oc6 a :Occupation;
+	crm:P1_is_identified_by "Canónigo".
+	
+:D84P494 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Pérez";
+	:child :D84P90, :D84P105, :D84P113;
+	:spouse :D84P58 ;
+	crm:P100_died_in :D84Death_1.
+	
+:D84Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D84.
+
+:D84P517 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Pérez de Villameana".
+	
+:Borondes_Arriba a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes de Suso" .
+
+:Feligresía_de_San_Miguel_de_Báscones a crm:E53_Place ;
+    crm:P1_is_identified_by "San Miguel de Váscones" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:D84 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1345-12-04;
+  crm:P70i_is_documented_in :AMSPO1540;
+  crm:P23_transferred_title_from :D84P58, :D84P113, :D84P90, :D84P105;
+  crm:P22_transferred_title_to :D84P154;
+  crm:P24_transferred_title_of :D84_Properties;
+  crm:P179_had_sales_price :D84payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D84P376;
+  crm:P14_carried_out_by :D84P19, :D84P377, :D84P380, :D84P517, :D84P436 ;  
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1345-12-04 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1345-12-04"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1540  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1540" .
+    
+:D84_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Borondes_Arriba, :Feligresía_de_San_Miguel_de_Báscones.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D84payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 15;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

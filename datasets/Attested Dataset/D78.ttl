@@ -1,0 +1,160 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D78P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D78Oc1b.
+
+:D78Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D78P50 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Alfonso";
+	:occupation :D78Oc1.
+	
+:D78Oc1 a :Occupation;
+	crm:P1_is_identified_by "Notario".
+
+:D78P62 a crm:E21_Person ;
+    :givenName "Menén" ;
+    :familyName "Alffonso";
+	:residence :Borondes ;
+	:father :D78P428 .
+
+:D78P83 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Alfonso".
+	
+:D78PB2 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Rodríguiz".
+
+:D78P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D78P154;
+	:residence :Oviedo .
+
+:D78P117 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Andreo";
+	:position_held :D78Oc2.
+	
+:D78Oc2 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D78P125 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Cabeça".
+
+:D78P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D78Oc3 ;
+	:spouse :D78P103;
+	:residence :Oviedo .
+	
+:D78Oc3 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D78P223 a crm:E21_Person ;
+    :givenName "Mayor" ;
+    :familyName "Ferrándiz";
+    :child :D78P224 .
+
+:D78P224 a crm:E21_Person ;
+    :givenName "Mayor" ;
+    :familyName "Ferrándiz";
+	:residence :Borondes ;
+	:mother :D78P223 ;
+	:father :D78P538 .
+
+:D78P225 a crm:E21_Person ;
+    :givenName "Menén" ;
+    :familyName "Ferrándiz".
+
+:D78P242 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Ferrándiz";
+	:occupation :D78Oc4;
+	:employer :D78PB1.
+	
+:D78Oc4 a :Occupation;
+	crm:P1_is_identified_by "Criado".
+	
+:D78PB1 a crm:E21_Person;
+    :givenName "Alfonso" ;
+    :familyName "Tebiera".
+	
+:D78P428 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Nicolás";
+	:residence :Borondes ;
+    :child :D78P62 .
+
+:D78P536 a crm:E21_Person ;
+    :givenName "Ignés" ;
+    :familyName "Pérez".
+
+:D78P538 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez" ;
+    :child :D78P224.
+
+:D78P690 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Suáriz";
+	:occupation :D78Oc5.
+	
+:D78Oc5 a :Occupation;
+	crm:P1_is_identified_by "Escripvano".
+
+:El_Nozedo a crm:E53_Place ;
+    crm:P1_is_identified_by "El Nozedo" .
+
+:El_Valle a crm:E53_Place ;
+    crm:P1_is_identified_by "El Valle" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+
+:D78 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1344-03-26;
+  crm:P70i_is_documented_in :AMSPO1638;
+  crm:P23_transferred_title_from :D78P224, :D78P428, :D78P62;
+  crm:P22_transferred_title_to :D78P154, :D78P103;
+  crm:P24_transferred_title_of :D78_Properties;
+  crm:P179_had_sales_price :D78payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D78P117;
+  crm:P14_carried_out_by :D78P50, :D78P690, :D78P242 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1344-03-26 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1344-03-26"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1638  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1638" .
+    
+:D78_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :El_Nozedo, :El_Valle.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D78payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 18;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .

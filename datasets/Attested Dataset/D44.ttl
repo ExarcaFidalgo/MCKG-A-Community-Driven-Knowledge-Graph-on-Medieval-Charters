@@ -1,0 +1,151 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D44P1b a crm:E21_Person ;
+    :givenName "Fernando" ;
+	:position_held :D44Oc1b.
+
+:D44Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D44P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D44P154.
+
+:D44P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:relative_uncle :D44P723;
+    :spouse :D44P103 ;
+	:occupation :D44Oc1 ;
+	:residence :Oviedo .
+	
+:D44Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D44P195 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Ferrándiz de Quintana".
+
+:D44P206 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Ferrándiz";
+	:occupation :D44Oc2.
+	
+:D44Oc2 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D44P329 a crm:E21_Person ;
+    :givenName "Monín" ;
+    :familyName "Gutiérriz".
+
+:D44P332 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Gutiérriz".
+
+:D44P376 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Martíniz";
+	:position_held :D44Oc3.
+	
+:D44Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D44P524 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Pérez de Lineres".
+
+:D44P558 a crm:E21_Person ;
+    :givenName "Luques" ;
+    :familyName "Pérez";
+	:relative_father-in-law :D44P664.
+
+:D44P573 a crm:E21_Person ;
+    :givenName "Nicolao" ;
+    :familyName "Pérez";
+	:occupation :D44Oc4.
+	
+:D44Oc4 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D44P664 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Rodríguiz del Portal";
+	:relative_son-in-law :D44P558.
+
+:D44P666 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Sánchiz".
+
+:D44P714 a crm:E21_Person ;
+    :givenName "Loriença" ;
+    :familyName "Suáriz" ;
+	:residence :Borondes_Arriba;
+    :spouse :D44P723 .
+
+:D44P722 a crm:E21_Person ;
+    :givenName "Martín" ;
+    :familyName "Suáriz";
+	:occupation :D44Oc5.
+	
+:D44Oc5 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D44P723 a crm:E21_Person ;
+    :givenName "Menen" ;
+    :familyName "Suáriz" ;
+	:residence :Borondes_Arriba;
+    :spouse :D44P714 ;
+	:sibling :D44P726;
+    :relative_nephew :D44P154 . 
+
+:D44P726 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Suáriz";
+	:sibling :D44P723.
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+	
+:Borondes_Arriba a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes de Suso" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+	
+:D44 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1334-05-17;
+  crm:P70i_is_documented_in :AMSPO1600;
+  crm:P23_transferred_title_from :D44P723, :D44P714;
+  crm:P22_transferred_title_to :D44P154, :D44P103;
+  crm:P24_transferred_title_of :D44_Properties;
+  crm:P179_had_sales_price :D44payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D44P376;
+  crm:P14_carried_out_by :D44P664, :D44P558, :D44P206, :D44P573, :D44P722; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1334-05-17 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1334-05-17"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1600  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1600" .
+    
+:D44_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Borondes.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D44payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 12;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .

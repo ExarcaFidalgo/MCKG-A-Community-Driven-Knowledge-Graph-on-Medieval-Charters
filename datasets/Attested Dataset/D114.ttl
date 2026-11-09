@@ -1,0 +1,161 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D114P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D114Oc1b.
+
+:D114Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D114P66 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Alfonso".
+
+:D114P96 a crm:E21_Person ;
+    :givenName "Gutier" ;
+    :familyName "Álvariz de Pentenno".
+
+:D114P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D114Oc1 ;
+	:residence :Oviedo_Portal .
+	
+:D114Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D114P175 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Ferrándiz";
+	:occupation :D114Oc2.
+	
+:D114Oc2 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D114P189 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Ferrándiz";
+	:occupation :D114Oc3.
+	
+:D114Oc3 a :Occupation;
+	crm:P1_is_identified_by "Alfayate".
+
+:D114P220 a crm:E21_Person ;
+    :givenName "Martín" ;
+    :familyName "Ferrándiz" .
+
+:D114P231 a crm:E21_Person ;
+    :givenName "Miguel" ;
+    :familyName "Ferrándiz";
+	:residence :Villamejil.
+
+:D114P233 a crm:E21_Person ;
+    :givenName "Nicolás" ;
+    :familyName "Ferrándiz";
+	:position_held :D114Oc4.
+	
+:D114Oc4 a :PublicOffice;
+	crm:P1_is_identified_by "Notario público del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D114P256 a crm:E21_Person ;
+    :givenName "Orraca" ;
+    :familyName "Ferrándiz";
+    :child :D114P697 ;
+	crm:P100_died_in :D114Death_1.
+	
+:D114Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D114.
+
+:D114P320 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Gonçáliz" ;
+    :child :D114P697  ;
+	crm:P100_died_in :D114Death_2.
+	
+:D114Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D114.
+
+:D114P373 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Martínez de la Rúa".
+
+:D114P394 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Martíniz".
+
+:D114P489 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Pérez".
+
+:D114P510 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Pérez".
+
+:D114P611 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "de las Quintanes";
+	:occupation :D114Oc5.
+	
+:D114Oc5 a :Occupation;
+	crm:P1_is_identified_by "Ortolano".
+
+:D114P697 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Suáriz" ;
+	:residence :Borondes_Arriba;
+    :father :D114P320 ;
+    :mother :D114P256 .
+
+:Los_Tegos a crm:E53_Place ;
+    crm:P1_is_identified_by "Los Tegos" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+	
+:Borondes_Arriba a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes de Suso" .
+	
+:Villamejil a crm:E53_Place ;
+    crm:P1_is_identified_by "Villamexil" .
+	
+:D114 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1359-06-23;
+  crm:P70i_is_documented_in :AMSPO1686;
+  crm:P23_transferred_title_from :D114P697;
+  crm:P22_transferred_title_to :D114P154;
+  crm:P24_transferred_title_of :D114_Properties;
+  crm:P179_had_sales_price :D114payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D114P233;
+  crm:P14_carried_out_by :D114P189, :D114P611, :D114P373, :D114P231, :D114P175 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1359-06-23 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1359-06-23"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1686  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1686" .
+    
+:D114_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Los_Tegos.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D114payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 16;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

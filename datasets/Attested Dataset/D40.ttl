@@ -1,0 +1,153 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D40P1b a crm:E21_Person ;
+    :givenName "Fernando" ;
+	:position_held :D40Oc1b.
+
+:D40Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D40P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D40P154.
+
+:D40P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D40Oc1 ;
+	:residence :Oviedo_Portal ;
+    :spouse :D40P103 .
+	
+:D40Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D40P233 a crm:E21_Person ;
+    :givenName "Nicolao" ;
+    :familyName "Ferrándiz";
+	:position_held :D40Oc2.
+	
+:D40Oc2 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D40P257 a crm:E21_Person ;
+    :givenName "Orraca" ;
+    :familyName "Ferrándiz";
+    :spouse :D40P729 .
+
+:D40P293 a crm:E21_Person ;
+    :givenName "Simón" ;
+    :familyName "Girálliz";
+	:father :D40PB1.
+	
+:D40PB1 a crm:E21_Person ;
+    :givenName "Giral" ;
+    :familyName "Iohanniz";
+    :child :D40P293 .
+
+:D40P421 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Menéndez";
+	:occupation :D40Oc3.
+	
+:D40Oc3 a :Occupation;
+	crm:P1_is_identified_by "Ofiçial del cabildo".	
+
+:D40P470 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Pérez";
+	:occupation :D40Oc4.
+	
+:D40Oc4 a :Occupation;
+	crm:P1_is_identified_by "Carpentero".	
+
+:D40P559 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Pérez" ;
+    :child :D40P729 ;
+	crm:P100_died_in :D40Death_1.
+	
+:D40Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D40.
+
+:D40P663 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Rodríguiz" ;
+    :child :D40P729 ;
+	crm:P100_died_in :D40Death_2.
+	
+:D40Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D40.
+
+:D40P674 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Santiago";
+	:occupation :D40Oc5.
+	
+:D40Oc5 a :Occupation;
+	crm:P1_is_identified_by "Carpentero".	
+
+:D40P729 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Suáriz" ;
+	:residence :Borondes_Arriba;
+    :father :D40P663 ; 
+    :mother :D40P559 ; 
+    :spouse :D40P257 . 
+	
+:Borondes_Arriba a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes de Suso" .
+	
+:Borondes_Abajo a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes de Iuso" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+
+:Perediello a crm:E53_Place ;
+    crm:P1_is_identified_by "Perediello" .
+
+:Vega_de_María_Mansa a crm:E53_Place ;
+    crm:P1_is_identified_by "Vega de María Mansa" .
+	
+:D40 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1333-07-19;
+  crm:P70i_is_documented_in :AMSPO1631;
+  crm:P23_transferred_title_from :D40P729 ,:D40P257;
+  crm:P22_transferred_title_to :D40P154, :D40P103;
+  crm:P24_transferred_title_of :D40_Properties;
+  crm:P179_had_sales_price :D40payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D40P233;
+  crm:P14_carried_out_by  :D40P293, :D40P421, :D40P674, :D40P470;
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1333-07-19 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1333-07-19"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1631  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1631" .
+    
+:D40_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Borondes_Arriba, :Borondes_Abajo, :Perediello, :Vega_de_María_Mansa.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D40payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 400;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+
+

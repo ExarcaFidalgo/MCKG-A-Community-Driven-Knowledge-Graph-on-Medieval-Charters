@@ -1,0 +1,140 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D117P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D117Oc1 ;
+	:residence :Oviedo .
+	
+:D117Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D117P204 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Ferrándiz";
+	:occupation :D117Oc2;
+	:employer :D117PB1.
+	
+:D117Oc2 a :Occupation;
+	crm:P1_is_identified_by "Criado".
+	
+:D117PB1 a crm:E21_Person ;
+    :givenName "Mayor" ;
+    :familyName "Suárez".
+
+:D117P222 a crm:E21_Person ;
+    :givenName "Martín" ;
+    :familyName "Ferrándiz";
+	:spouse :D117P720.
+
+:D117P266 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Garçía";
+	:position_held :D117Oc3.
+	
+:D117Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en la pobla de Grado";
+	:applies_to_jurisdiction :Grado.
+
+:D117P315 a crm:E21_Person ;
+    :givenName "Peley" ;
+    :familyName "Gonçáliz".
+
+:D117P423 a crm:E21_Person ;
+    :givenName "Aldonça" ;
+    :familyName "Morina";
+	:child :D117P583.
+
+:D117P483 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Pérez de Vascones".
+
+:D117P504 a crm:E21_Person ;
+    :givenName "Cosme" ;
+    :familyName "Pérez de Sandiche".
+
+:D117P518 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Pérez" ;
+	:child :D117P583.
+
+:D117P526 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Pérez";
+	:occupation :D117Oc4.
+	
+:D117Oc4 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D117P583 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Pérez" ;
+	:residence :Báscones;
+    :father :D117P518 ;
+    :mother :D117P423 ;
+	:sibling :D117P720.
+
+:D117P715 a crm:E21_Person ;
+    :givenName "Lope" ;
+    :familyName "Suáriz de Grullos".
+
+:D117P720 a crm:E21_Person ;
+    :givenName "Marinna" ;
+    :familyName "Suáriz";
+	:sibling :D117P583;
+	:spouse :D117P222.
+
+:La_Roça_carballedo a crm:E53_Place ;
+    crm:P1_is_identified_by "La Roça" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Grado a crm:E53_Place ;
+    crm:P1_is_identified_by "Grado" ; .
+
+:Báscones a crm:E53_Place ;
+    crm:P1_is_identified_by "Váscones" ; .
+
+:D117 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1359-12-12;
+  crm:P70i_is_documented_in :AMSPO1680;
+  crm:P23_transferred_title_from :D117P583, :D117P720, :D117P222 ;
+  crm:P22_transferred_title_to :D117P154 ;
+  crm:P24_transferred_title_of :D117_Properties;
+  crm:P179_had_sales_price :D117payment_1, :D117payment_2;
+  crm:P14_carried_out_byPQ14.1-Notary :D117P266;
+  crm:P14_carried_out_by :D117P715, :D117P315, :D117P504, :D117P526, :D117P204 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1359-12-12 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1359-12-12"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1680  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1680" .
+    
+:D117_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :La_Roça_carballedo.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D117payment_1 a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 28;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+
+:D117payment_2 a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 2;
+	crm:P180_has_currency :Dinero.
+	
+:Dinero a crm:E98_Currency ;
+  crm:P1_is_identified_by "Dinero" .

@@ -1,0 +1,185 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D3P1b a crm:E21_Person ;
+    :givenName "Fernando" ;
+	:position_held :D3Oc1b.
+
+:D3Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D3P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D3P154.
+
+:D3P104 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:child :D3P305.
+
+:D3P140 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Díaz";
+	:relative_uncle :D3PB1.
+	
+:D3PB1 a crm:E21_Person ;
+	:relative_nephew :D3P140;
+    :givenName "Garçía" ;
+    :familyName "Suáriz" .
+
+:D3P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Fernándiz" ;
+    :relative_cousin :D3P305 ;
+	:residence :Oviedo ;
+	:spouse :D3P103 ;
+	:mother :D3P678 ;
+	:occupation :D3Oc1 .
+	
+:D3Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oryz".
+
+:D3P180 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Fernándiz" ;
+	:occupation :D3Oc2.
+	
+:D3Oc2 a :Occupation;
+	crm:P1_is_identified_by "Escudero".
+
+:D3P237 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Fernándiz";
+	:position_held :D3Oc3.
+	
+:D3Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey enna pobla de Grado";
+	:applies_to_jurisdiction :Grado.
+
+:D3P261 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Garot" .
+
+:D3P305 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Gonçáliz" ;
+    :relative_cousin :D3P154 ;
+	:mother :D3P104 ;
+	:father :D3P707 .
+
+:D3P461 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Pérez de San Romano".
+
+:D3P600 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Pérez";
+	:spouse :D3P739 ;
+	:child :D3P678, :D3P723;
+	crm:P100_died_in :D3Death_1.
+	
+:D3Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D3.
+
+:D3P627 a crm:E21_Person ;
+	:father :D3PB2;
+    :givenName "Gonçalo" ;
+    :familyName "Rodríguiz".
+	
+:D3PB2 a crm:E21_Person ;
+	:child :D3P627;
+    :givenName "Rodrigo" ;
+    :familyName "Martíniz" .
+
+:D3P662 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Rodríguiz";
+	:occupation :D3Oc4.
+	
+:D3Oc4 a :Occupation;
+	crm:P1_is_identified_by "Escripván".
+
+:D3P678 a crm:E21_Person ;
+    :givenName "Aldonça" ;
+    :familyName "Suáriz" ;
+	:child :D3P154 ;
+	:mother :D3P739;
+	:father :D3P600;
+	:sibling :D3P723.
+
+:D3P707 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Suáriz";
+    :child :D3P305 .
+
+:D3P714 a crm:E21_Person ;
+    :givenName "Loriença" ;
+    :familyName "Suáriz" ;
+	:residence :Borondes;
+    :spouse :D3P723 .
+
+:D3P723 a crm:E21_Person ;
+    :givenName "Menén" ;
+    :familyName "Suáriz";
+	:residence :Borondes;
+	:mother :D3P739;
+	:father :D3P600;
+    :sibling :D3P678 ;
+    :spouse :D3P714 .
+
+:D3P739 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Yánnez";
+	:spouse :D3P600;
+	:child :D3P678, :D3P723;
+	crm:P100_died_in :D3Death_2.
+	
+:D3Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D3.
+	
+:D3PB3 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Sirgo de Vallo".
+	
+:Alfoz_de_Grado a crm:E53_Place ;
+    crm:P1_is_identified_by "Alffoz de Grado" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Vallongo a crm:E53_Place ;
+    crm:P1_is_identified_by "Vallongo" .
+
+:Grado a crm:E53_Place ;
+    crm:P1_is_identified_by "Grado" .
+	
+:D3 a crm:E8_Acquisition;
+  crm:P2_has_type :Disembargo;
+  crm:P4_has_time-span :Within_1327-01-03;
+  crm:P70i_is_documented_in :AMSPO1377;
+  crm:P23_transferred_title_from :D3P723, :D3P714;
+  crm:P22_transferred_title_to :D3P154, :D3P103;
+  crm:P24_transferred_title_of :D3_Properties;
+  crm:P14_carried_out_byPQ14.1-Notary :D3P237;
+  crm:P14_carried_out_by :D3P180, :D3P627, :D3PB3, :D3P662, :D3P261, :D3P461;
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1327-01-03 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1327-01-03"^^xsd:date.
+
+:Disembargo a crm:E55_Type;
+   crm:P1_is_identified_by "Disembargo" .
+  
+:D3_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Borondes, :Vallongo, :Alfoz_de_Grado.
+	
+:AMSPO1377 a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1377" .
+  
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .

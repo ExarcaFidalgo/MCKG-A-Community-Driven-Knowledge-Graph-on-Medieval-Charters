@@ -1,0 +1,156 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D94P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D94Oc1b.
+
+:D94Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D94P51 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Alfonso";
+	:occupation :D94Oc1.
+	
+:D94Oc1 a :Occupation;
+	crm:P1_is_identified_by "Çapatero".
+
+:D94P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D94Oc2 ;
+	:residence :Oviedo_Portal .
+	
+:D94Oc2 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D94P178 a crm:E21_Person ;
+    :givenName "Elvira" ;
+    :familyName "Ferrándiz";
+    :spouse :D94P582 .
+
+:D94P224 a crm:E21_Person ;
+    :givenName "Mayor" ;
+    :familyName "Ferrándiz";
+	:child :D94P582;
+	crm:P100_died_in :D94Death_1.
+	
+:D94Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D94.
+
+:D94P233 a crm:E21_Person ;
+    :givenName "Nicolás" ;
+    :familyName "Fernández";
+	:position_held :D94Oc3.
+	
+:D94Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D94P440 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "de Olivares".
+	
+:D94PB2 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez".
+
+:D94P546 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez de Agüera".
+
+:D94P582 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Pérez" ;
+	:residence :Borondes_Arriba;
+    :father :D94PB1 ;
+    :mother :D94P224 ;
+    :spouse :D94P178 .
+	
+:D94PB1 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Pérez" ;
+	:child :D94P582;
+	crm:P100_died_in :D94Death_2.
+	
+:D94Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D94.
+
+:D94P595 a crm:E21_Person ;
+    :givenName "Ruy" ;
+    :familyName "Pérez del Rosal";
+	:child :D94P644.
+
+:D94P644 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Rodríguiz";
+    :father :D94P595.
+
+:D94P679 a crm:E21_Person ;
+    :givenName "Aldonça" ;
+    :familyName "Suáriz de y de Borondes".
+
+:D94P690 a crm:E21_Person ;
+    :givenName "Álvaro" ;
+    :familyName "Suárez".
+	
+:D94PB3 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "de Lugones".
+
+:D94P700 a crm:E21_Person ;
+    :givenName "Elvira" ;
+    :familyName "Suárez de la Pobla".
+
+:La_Pedrosa a crm:E53_Place ;
+    crm:P1_is_identified_by "La Pedrosa" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+	
+:Borondes_Arriba a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes de Suso" .
+
+:D94 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1349-03-01;
+  crm:P70i_is_documented_in :AMSPO1648;
+  crm:P23_transferred_title_from :D94P582, :D94P178;
+  crm:P22_transferred_title_to :D94P154;
+  crm:P24_transferred_title_of :D94_Properties;
+  crm:P179_had_sales_price :D94payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D94P233;
+  crm:P14_carried_out_by :D94P51, :D94P546, :D94PB3, :D94P644 ;  
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1349-03-01 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1349-03-01"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1648  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1648" .
+    
+:D94_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Borondes, :La_Pedrosa.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D94payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 73;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

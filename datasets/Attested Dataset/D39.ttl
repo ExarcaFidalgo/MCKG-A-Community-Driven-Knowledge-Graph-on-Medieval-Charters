@@ -1,0 +1,187 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D39P1b a crm:E21_Person ;
+    :givenName "Fernando" ;
+	:position_held :D39Oc1b.
+
+:D39Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D39P8 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Alfonso";
+	:occupation :D39Oc1.
+	
+:D39Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D39P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D39P154;
+	:residence :Oviedo_Portal .
+
+:D39P117 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Andreo";
+	:position_held :D39Oc2.
+	
+:D39Oc2 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D39P124 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Bono";
+	:occupation :D39Oc3.
+	
+:D39Oc3 a :Occupation;
+	crm:P1_is_identified_by "Correero".
+
+:D39P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D39Oc4 ;
+	:residence :Oviedo_Portal ;
+    :spouse :D39P103 .
+	
+:D39Oc4 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D39P280 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Garçía";
+    :child :D39P532 ;
+	crm:P100_died_in :D39Death_1.
+	
+:D39Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D39.
+
+:D39P344 a crm:E21_Person ;
+    :givenName "Pedro" ;
+    :familyName "Iohan" ;
+	:occupation :D39Oc5;
+    :child :D39P532 ;
+	crm:P100_died_in :D39Death_2.
+	
+:D39Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D39.
+	
+:D39Oc5 a :Occupation;
+	crm:P1_is_identified_by "Clérigo".
+
+:D39P386 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Martíniz";
+	:father :D39PB1.
+	
+:D39PB1 a crm:E21_Person ;
+    :givenName "Durán" ;
+    :familyName "Martíniz";
+    :child :D39P386 .
+
+:D39P403 a crm:E21_Person ;
+    :givenName "Ruy" ;
+    :familyName "Martíniz";
+	:occupation :D39Oc6;
+	:work_location :Oviedo.
+	
+:D39Oc6 a :Occupation;
+	crm:P1_is_identified_by "Canónigo de la Iglesia de Oviedo".
+
+:D39P532 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Pérez de Berzió" ;
+	:occupation :D39Oc7;
+    :father :D39P344 ;
+    :mother :D39P280 ;
+	:sibling :D39P599 ;
+	:employer :D39P403.
+	
+:D39Oc7 a :Occupation;
+	crm:P1_is_identified_by "Criado".
+
+:D39P573 a crm:E21_Person ;
+    :givenName "Nicolao" ;
+    :familyName "Pérez";
+	:occupation :D39Oc8.
+	
+:D39Oc8 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D39P599 a crm:E21_Person ;
+    :givenName "Sancha" ;
+    :familyName "Pérez" ;
+    :sibling :D39P532 . 
+
+:D39P604 a crm:E21_Person ;
+    :givenName "Tomás" ;
+    :familyName "Pérez";
+	:occupation :D39Oc9.
+	
+:D39Oc9 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D39P622 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Rodríguiz";
+	:occupation :D39Oc10.
+	
+:D39Oc10 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D39P641 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Rodríguiz";
+	:occupation :D39Oc11.
+	
+:D39Oc11 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+	
+:Borondes_Arriba a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes de Suso" .
+	
+:Borondes_Abajo a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes de Iuso" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+	
+:D39 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1333-06-09;
+  crm:P70i_is_documented_in :AMSPO1594;
+  crm:P23_transferred_title_from :D39P532;
+  crm:P22_transferred_title_to :D39P154, :D39P103; 
+  crm:P24_transferred_title_of :D39_Properties;
+  crm:P179_had_sales_price :D39payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D39P117;
+  crm:P14_carried_out_by :D39P641, :D39P604, :D39P622, :D39P8, :D39P573, :D39P124, :D39P386; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1333-06-09 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1333-06-09"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1594 a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1594" .
+    
+:D39_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Borondes_Arriba, :Borondes_Abajo.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D39payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 120;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .

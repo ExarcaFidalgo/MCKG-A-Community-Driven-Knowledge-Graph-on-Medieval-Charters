@@ -1,0 +1,127 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D102P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D102Oc1b.
+
+:D102Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D102P142 a crm:E21_Person ;
+    :givenName "Teresa" ;
+    :familyName "Díaz" ;
+    :child :D102P157  ;
+	crm:P100_died_in :D102Death_1.
+	
+:D102Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D102.
+
+:D102P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D102Oc1 ;
+	:residence :Oviedo .
+	
+:D102Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D102P157 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Ferrándiz" ;
+    :father :D102P268 ;
+    :mother :D102P142 .
+	
+:D102P164 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándoz";
+	:occupation :D102Oc2.
+	
+:D102Oc2 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D102P251 a crm:E21_Person ;
+    :givenName "Sancha" ;
+    :familyName "Ferrándiz de Veyga".
+
+:D102P268 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Garçía de Veyga";
+	:child :D102P157   ;
+	crm:P100_died_in :D102Death_2.
+	
+:D102Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D102.
+
+:D102P275 a crm:E21_Person ;
+    :givenName "Gutier" ;
+    :familyName "Garçía";
+	:position_held :D102Oc3.
+	
+:D102Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Notario público del rey enna pobla de Grado";
+	:applies_to_jurisdiction :Grado.
+
+:D102P277 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Garçía".
+
+:D102P506 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Pérez".
+
+:D102P629 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Rodríguiz";
+	:father :D102PB1.
+	
+:D102PB1 a crm:E21_Person ;
+    :givenName "Ruy" ;
+    :familyName "Gonçáliz";
+	:child :D102P629 .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+	
+:Grado a crm:E53_Place ;
+    crm:P1_is_identified_by "Grado" .
+
+:Pumar_Martínoz a crm:E53_Place ;
+    crm:P1_is_identified_by "Pumar Martino" .
+
+:D102 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1355-05-02;
+  crm:P70i_is_documented_in :AMSPO1605;
+  crm:P23_transferred_title_from :D102P157;
+  crm:P22_transferred_title_to :D102P154, :D102P251;
+  crm:P24_transferred_title_of :D102_Properties;
+  crm:P179_had_sales_price :D102payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D102P275;
+  crm:P14_carried_out_by :D102P629, :D102P506, :D102P164 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1355-05-02 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1355-05-02"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1605  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1605" .
+    
+:D102_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Pumar_Martínoz.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D102payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 12;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

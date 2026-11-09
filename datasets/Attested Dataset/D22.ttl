@@ -1,0 +1,187 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D22P1b a crm:E21_Person ;
+    :givenName "Fernando" ;
+	:position_held :D22Oc1b.
+
+:D22Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D22P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D22P154;
+	:residence :Oviedo_Portal .
+
+:D22P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Fernándiz";
+	:occupation :D22Oc1 ;
+	:spouse :D22P103;
+	:residence :Oviedo_Portal .
+	
+:D22Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D22P156 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Fernándiz";
+	:father :D22P432.
+
+:D22P160 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Fernándiz";
+	:occupation :D22Oc2.
+	
+:D22Oc2 a :Occupation;
+	crm:P1_is_identified_by "Çapatero".
+
+:D22P257 a crm:E21_Person ;
+    :givenName "Orraca" ;
+    :familyName "Fernándiz";
+    :spouse :D22P729 .
+
+:D22P321 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Gonçáliz de Samma".
+
+:D22P346 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Iohan";
+	:occupation :D22Oc3.
+	
+:D22Oc3 a :Occupation;
+	crm:P1_is_identified_by "Alffayate".
+
+:D22P430 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Nicolás";
+	:position_held :D22Oc4.
+	
+:D22PB2 a crm:E21_Person ;
+    :givenName "Garçía" .
+	
+:D22PB3 a crm:E21_Person ;
+    :givenName "Martino" .
+	
+:D22Oc4 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico por el rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D22P432 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Nicolás";
+    :child :D22P156 .
+
+:D22P498 a crm:E21_Person ;
+    :givenName "Apariçio" ;
+    :familyName "Pérez de la Rúa".
+
+:D22P518 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Pérez de Váscones".
+
+:D22P551 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Pérez de Borondes";
+	:father :D22PB1.
+	
+:D22PB1 a crm:E21_Person;
+	:givenName "Pedro";
+	:familyName "Martíniz";
+    :child :D22P551 .
+
+:D22P601 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Pérez de Váscones".
+
+:D22P663 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Rodríguez";
+    :child :D22P681 .
+
+:D22P681 a crm:E21_Person ;
+    :givenName "Aldonça" ;
+    :familyName "Suáriz" ;
+	:residence :Sama_de_Grado;
+    :father :D22P663 ;
+    :sibling :D22P729 ;
+    :spouse :D22P704 . 
+
+:D22P704 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Suáriz" ;
+	:residence :Sama_de_Grado;
+    :spouse :D22P681 .
+
+:D22P729 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Suáriz" ;
+    :sibling :D22P681 ; 
+    :spouse :D22P257 .
+	
+:Alfoz_de_Grado a crm:E53_Place ;
+    crm:P1_is_identified_by "Alfoz de Grado" .
+
+:El_Pozo a crm:E53_Place ;
+    crm:P1_is_identified_by "El Pozo" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+
+:Sama_de_Grado a crm:E53_Place ;
+    crm:P1_is_identified_by "Samma" .
+
+:Sienra a crm:E53_Place ;
+    crm:P1_is_identified_by "Sienra" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+
+:Báscones a crm:E53_Place ;
+    crm:P1_is_identified_by "Váscones" .
+
+:Grado a crm:E53_Place ;
+    crm:P1_is_identified_by "Grado".
+
+:Traspiñera_ería a crm:E53_Place ;
+    crm:P1_is_identified_by "Ería de Traspinnera" .
+	
+:D22 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1329-09-07;
+  crm:P70i_is_documented_in :AMSPO1577;
+  crm:P23_transferred_title_from :D22P681, :D22P704, :D22P729, :D22P257; 
+  crm:P22_transferred_title_to :D22P154, :D22P103;
+  crm:P24_transferred_title_of :D22_Properties;
+  crm:P179_had_sales_price :D22payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D22P430;
+  crm:P14_carried_out_by :D22P498, :D22P156, :D22P346, :D22P160; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1329-09-07 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1329-09-07"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+	
+:AMSPO1577 a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1577" .
+    
+:D22_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Sienra, :El_Pozo.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D22payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 27;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .

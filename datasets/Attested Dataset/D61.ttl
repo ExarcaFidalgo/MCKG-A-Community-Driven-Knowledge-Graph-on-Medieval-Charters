@@ -1,0 +1,138 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D61P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D61Oc1b.
+
+:D61Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D61P46 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Alfonso";
+	:occupation :D61Oc1.
+	
+:D61Oc1 a :Occupation;
+	crm:P1_is_identified_by "Mercador".
+	
+:D61PB1 a crm:E21_Person ;
+    :nickname "Cabellinos" .
+	
+:D61PB2 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+	:occupation :D61Oc4.
+	
+:D61Oc4 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D61P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D61P154;
+	:residence :Oviedo .
+
+:D61P107 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+    :child :D61P448;
+	crm:P100_died_in :D61Death_1.
+	
+:D61Death_1 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D61.
+
+:D61P118 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Andreo".
+
+:D61P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Fernández";
+	:occupation :D61Oc2 ;
+	:spouse :D61P103;
+	:residence :Oviedo .
+	
+:D61Oc2 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D61P201 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Fernández";
+	:position_held :D61Oc3.
+	
+:D61Oc3 a :PublicOffice;
+	crm:P1_is_identified_by "Notario público del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D61P448 a crm:E21_Person ;
+    :givenName "Álvaro" ;
+    :familyName "Pérez" ;
+    :residence :Borondes_Arriba;
+    :father :D61P726;
+    :mother :D61P107.
+
+:D61P726 a crm:E21_Person ;
+    :givenName "Pedro" ;
+    :familyName "Suáriz";
+    :child :D61P448;
+	crm:P100_died_in :D61Death_2.
+	
+:D61Death_2 a crm:E69_Death;
+	crm:P183_ends_before_the_start_of :D61.
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+	
+:Borondes_Arriba a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes de Suso" .
+
+:Felgueras a crm:E53_Place ;
+    crm:P1_is_identified_by "Felgueras" .
+
+:Ondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Hondes" .
+	
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Piñera a crm:E53_Place ;
+    crm:P1_is_identified_by "Pinnera" .
+
+:Posada a crm:E53_Place ;
+    crm:P1_is_identified_by "Posada" .
+
+:D61 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1340-12-22;
+  crm:P70i_is_documented_in :AMSPO1735;
+  crm:P23_transferred_title_from :D61P448;
+  crm:P22_transferred_title_to :D61P154, :D61P103;
+  crm:P24_transferred_title_of  :D61_Properties;
+  crm:P179_had_sales_price :D61payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D61P201;
+  crm:P14_carried_out_by :D61P118, :D61P46, :D61PB1, :D61PB2 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1340-12-22 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1340-12-22"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1735  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1735" .
+    
+:D61_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Ondes, :Piñera, :Felgueras, :Posada.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D61payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 20;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .

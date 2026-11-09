@@ -1,0 +1,118 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D99P1 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D99Oc1b.
+
+:D99Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D99P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D99Oc1 ;
+	:residence :Oviedo .
+	
+:D99Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D99P193 a crm:E21_Person ;
+    :givenName "Gonçalo" ;
+    :familyName "Ferrándiz";
+	:occupation :D99Oc2.
+	
+:D99Oc2 a :Occupation;
+	crm:P1_is_identified_by "Notario".
+
+:D99P269 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "García" .
+
+:D99P309 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Gonçáliz";
+	:occupation :D99Oc3.
+	
+:D99Oc3 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D99P376 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Martíniz";
+	:position_held :D99Oc4.
+	
+:D99Oc4 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D99P423 a crm:E21_Person ;
+    :givenName "Aldonça" ;
+    :familyName "Morina";
+	:child :D99P583.
+
+:D99P440 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "de Olivares".
+
+:D99P518 a crm:E21_Person ;
+    :givenName "Fernán" ;
+    :familyName "Pérez de Váscones" ;
+	:child :D99P583.
+
+:D99P583 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Pérez" ;
+    :father :D99P518;
+    :mother :D99P423.
+
+:D99P606 a crm:E21_Person ;
+    :givenName "Tomás" ;
+    :familyName "Pérez De la Rua".
+
+:D99P689 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Suáriz".
+
+:Las_Pevidas a crm:E53_Place ;
+    crm:P1_is_identified_by "Las Pevidas" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:D99 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1354-12-09;
+  crm:P70i_is_documented_in :AMSPO1673;
+  crm:P23_transferred_title_from :D99P583;
+  crm:P22_transferred_title_to :D99P154;
+  crm:P24_transferred_title_of :D99_Properties;
+  crm:P179_had_sales_price :D99payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D99P376;
+  crm:P14_carried_out_by :D99P606, :D99P193, :D99P440, :D99P309 ; 
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1354-12-09 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1354-12-09"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO1673  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1673" .
+    
+:D99_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Las_Pevidas.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D99payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 22;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

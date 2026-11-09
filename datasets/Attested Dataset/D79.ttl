@@ -1,0 +1,124 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D79P1 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :regnalOrdinal "XI";
+	:position_held :D79Oc1b.
+
+:D79Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D79P83 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Alffonso".
+
+:D79P89 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Álvariz".
+
+:D79P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvariz";
+	:spouse :D79P154;
+	:residence :Oviedo .
+
+:D79P137 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Díaz de Vega".
+
+:D79P154 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D79Oc1 ;
+	:spouse :D79P103;
+	:residence :Oviedo .
+	
+:D79Oc1 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D79P376 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Martíniz";
+	:position_held :D79Oc2.
+	
+:D79Oc2 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D79P476 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Pérez";
+	:father :D79PB1.
+	
+:D79PB1 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Pérez de Luarca";
+	:child :D79P476.
+
+:D79P492 a crm:E21_Person ;
+    :givenName "Alvar" ;
+    :familyName "Pérez";
+	:occupation :D79Oc3.
+	
+:D79Oc3 a :Occupation;
+	crm:P1_is_identified_by "Alfayate".
+
+:D79P663 a crm:E21_Person ;
+    :givenName "Suer" ;
+    :familyName "Rodríguiz";
+	:child :D79P729.
+
+:D79P698 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Suáriz de Vega".
+
+:D79P729 a crm:E21_Person ;
+    :givenName "Pero" ;
+    :familyName "Suáriz de Borondes" ;
+    :father :D79P663 .
+	
+:El_Nozedo a crm:E53_Place ;
+    crm:P1_is_identified_by "El Nozedo" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+
+:D79 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1344-04-24;
+  crm:P70i_is_documented_in :AMSPO355;
+  crm:P23_transferred_title_from :D79P729;
+  crm:P22_transferred_title_to :D79P154, :D79P103;
+  crm:P24_transferred_title_of :D79_Properties;
+  crm:P179_had_sales_price :D79payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D79P376;
+  crm:P14_carried_out_by :D79P89, :D79P698, :D79P476, :D79P492 ;
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1344-04-24 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1344-04-24"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+        
+:AMSPO355  a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSP, nº 355" .
+    
+:D79_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :El_Nozedo.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D79payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 5;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+

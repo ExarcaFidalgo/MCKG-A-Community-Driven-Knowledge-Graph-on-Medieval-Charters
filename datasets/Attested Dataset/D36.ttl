@@ -1,0 +1,139 @@
+@prefix : <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+:D36P1b a crm:E21_Person ;
+    :givenName "Fernando" ;
+	:position_held :D36Oc1b.
+
+:D36Oc1b a :PublicOffice;
+	crm:P1_is_identified_by "Rey".
+
+:D36P7 a crm:E21_Person ;
+    :givenName "Diego" ;
+    :familyName "Alffonsso";
+	:occupation :D36Oc1.
+	
+:D36Oc1 a :Occupation;
+	crm:P1_is_identified_by "Escrivano".
+
+:D36P92 a crm:E21_Person ;
+    :givenName "Cezilla" ;
+    :familyName "Álvarez";
+	:spouse :D36P625.
+
+:D36P103 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvarez";
+	:spouse :D36P154.
+
+:D36P106 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Álvarez";
+	:residence :Berció;
+    :sibling :D36P116 .
+
+:D36P116 a crm:E21_Person ;
+    :givenName "Rodrig" ;
+    :familyName "Álvarez" ;
+	:residence :Berció;
+    :sibling :D36P106 .
+
+:D36P117 a crm:E21_Person ;
+    :givenName "Alffonso" ;
+    :familyName "Andreo";
+	:position_held :D36Oc2.
+	
+:D36Oc2 a :PublicOffice;
+	crm:P1_is_identified_by "Notario póblico del rey en Oviedo";
+	:applies_to_jurisdiction :Oviedo.
+
+:D36P154 a crm:E21_Person ;
+    :givenName "Alfonso" ;
+    :familyName "Ferrándiz";
+	:occupation :D36Oc3 ;
+	:residence :Oviedo_Portal ;
+    :spouse :D36P103 .
+	
+:D36Oc3 a :Occupation;
+	crm:P1_is_identified_by "Oriz".
+
+:D36P277 a crm:E21_Person ;
+    :givenName "María" ;
+    :familyName "Garçía".
+
+:D36P281 a crm:E21_Person ;
+    :givenName "Mayor" ;
+    :familyName "Garçía".
+
+:D36P285 a crm:E21_Person ;
+    :givenName "Ruy" ;
+    :familyName "Garçía".
+
+:D36P317 a crm:E21_Person ;
+    :givenName "Ruy" ;
+    :familyName "Gonçález";
+	:occupation :D36Oc4.
+	
+:D36Oc4 a :Occupation;
+	crm:P1_is_identified_by "Carpentero".
+
+:D36P625 a crm:E21_Person ;
+    :givenName "Garçía" ;
+    :familyName "Rodríguiz";
+	:spouse :D36P92.
+
+:D36P642 a crm:E21_Person ;
+    :givenName "Iohan" ;
+    :familyName "Rodríguiz";
+	:occupation :D36Oc5.
+	
+:D36Oc5 a :Occupation;
+	crm:P1_is_identified_by "Pedrero".
+
+:Berció a crm:E53_Place ;
+    crm:P1_is_identified_by "Berzió" .
+
+:Borondes a crm:E53_Place ;
+    crm:P1_is_identified_by "Borondes" .
+
+:Oviedo a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo" .
+
+:Oviedo_Portal a crm:E53_Place ;
+    crm:P1_is_identified_by "Oviedo al Portal" .
+
+:D36 a crm:E96_Purchase;
+  crm:P2_has_type :Sale;
+  crm:P4_has_time-span :Within_1333-03-27;
+  crm:P70i_is_documented_in :AMSPO1598;
+  crm:P23_transferred_title_from :D36P116, :D36P103;
+  crm:P22_transferred_title_to :D36P117 ,:D36P106;
+  crm:P24_transferred_title_of :D36_Properties;
+  crm:P179_had_sales_price :D36payment;
+  crm:P14_carried_out_byPQ14.1-Notary :D36P117;
+  crm:P14_carried_out_by :D36P317, :D36P7, :D36P642 ;  
+  crm:P14.1_in_the_role_of :Witness.
+  
+:Within_1333-03-27 a crm:E52_Time-Span;
+   crm:P82_at_some_time_within "1333-03-27"^^xsd:date.
+  
+:Sale a crm:E55_Type;
+   crm:P1_is_identified_by "Sale" .
+	
+:AMSPO1598 a crm:E31_Document ;
+  crm:P1_is_identified_by "AMSPO, FSV, nº 1598" .
+    
+:D36_Properties a crm:E27_Site;
+	crm:P53_has_former_or_current_location :Borondes.
+	
+:Witness a crm:E55_Type ;
+  crm:P1_is_identified_by "Witness" .
+  
+:D36payment a crm:E97_MonetaryAmount ;
+	crm:P90_has_value 30;
+	crm:P180_has_currency :Maravedi.
+	
+:Maravedi a crm:E98_Currency ;
+  crm:P1_is_identified_by "Maravedí" .
+
